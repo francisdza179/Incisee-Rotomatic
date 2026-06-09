@@ -1,0 +1,352 @@
+/* ============================================================
+   INCISE ROTOMATIC — About Page Styles
+   ============================================================ */
+
+/* ── Company Overview ─────────────────────────────────────── */
+.about-overview {
+  padding: var(--sp-24) 0;
+  background: var(--clr-bg-base);
+}
+
+.about-overview__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-16);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .about-overview__inner { grid-template-columns: 1fr; }
+}
+
+.about-overview__image {
+  position: relative;
+  height: 460px;
+  border-radius: var(--radius-2xl);
+  background: var(--clr-bg-card);
+  border: 1px solid var(--clr-border);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 120px;
+}
+
+.about-overview__image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(30,28,206,0.04) 0%, transparent 60%);
+}
+
+.about-overview__cert-strip {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--sp-4) var(--sp-5);
+  background: rgba(8,13,26,0.85);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--clr-border);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.about-overview__cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  background: rgba(8,178,25,0.08);
+  border: 1px solid rgba(8,178,25,0.2);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent-green);
+  letter-spacing: 0.06em;
+}
+
+.about-overview__pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-top: var(--sp-8);
+}
+
+@media (max-width: 400px) {
+  .about-overview__pillars { grid-template-columns: 1fr; }
+}
+
+.pillar-card {
+  text-align: center;
+  padding: var(--sp-5);
+  background: var(--clr-bg-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+}
+
+.pillar-card:hover {
+  border-color: var(--clr-border-glow);
+  background: var(--clr-bg-card);
+}
+
+.pillar-card__icon { font-size: 32px; margin-bottom: var(--sp-2); }
+.pillar-card__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--clr-text-primary);
+}
+
+
+/* ── Timeline ─────────────────────────────────────────────── */
+.timeline-section {
+  background: var(--clr-bg-surface);
+  padding: var(--sp-24) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(30,28,206,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 760px;
+  margin: var(--sp-12) auto 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--clr-accent-blue), var(--clr-accent-green), transparent);
+  transform: translateX(-50%);
+}
+
+@media (max-width: 640px) {
+  .timeline::before { left: 20px; }
+}
+
+.timeline__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-10);
+  position: relative;
+}
+
+.timeline__item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 640px) {
+  .timeline__item,
+  .timeline__item:nth-child(even) {
+    flex-direction: row;
+    padding-left: var(--sp-12);
+  }
+}
+
+.timeline__dot {
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--clr-accent-blue);
+  border: 3px solid var(--clr-bg-surface);
+  box-shadow: 0 0 0 3px rgba(30,28,206,0.2);
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .timeline__dot {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline__content {
+  width: calc(50% - var(--sp-8));
+  background: var(--clr-bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-5) var(--sp-6);
+  transition: all var(--transition-base);
+}
+
+.timeline__content:hover {
+  border-color: var(--clr-border-glow);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+@media (max-width: 640px) {
+  .timeline__content { width: 100%; }
+}
+
+.timeline__year {
+  font-family: var(--font-display);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent-green);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--sp-2);
+}
+
+.timeline__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--clr-text-primary);
+  margin-bottom: var(--sp-2);
+}
+
+.timeline__desc {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  line-height: var(--lh-relaxed);
+  max-width: none;
+}
+
+.timeline__spacer { width: calc(50% - var(--sp-8)); }
+
+@media (max-width: 640px) {
+  .timeline__spacer { display: none; }
+}
+
+
+/* ── Certifications ───────────────────────────────────────── */
+.certs-section {
+  background: var(--clr-bg-base);
+  padding: var(--sp-20) 0;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+  margin-top: var(--sp-12);
+}
+
+@media (max-width: 768px) {
+  .certs-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 500px) {
+  .certs-grid { grid-template-columns: 1fr; }
+}
+
+.cert-card {
+  text-align: center;
+  padding: var(--sp-8) var(--sp-6);
+  background: var(--clr-bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-slow);
+}
+
+.cert-card:hover {
+  border-color: var(--clr-border-green);
+  box-shadow: var(--shadow-glow-green);
+  transform: translateY(-4px);
+}
+
+.cert-card__icon { font-size: 48px; margin-bottom: var(--sp-4); }
+.cert-card__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--clr-text-primary);
+  margin-bottom: var(--sp-2);
+}
+.cert-card__desc {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  line-height: var(--lh-relaxed);
+  max-width: none;
+}
+
+
+/* ── Incise Group ─────────────────────────────────────────── */
+.group-section {
+  background: var(--clr-bg-surface);
+  padding: var(--sp-20) 0;
+}
+
+.group-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+  margin-top: var(--sp-12);
+}
+
+@media (max-width: 768px) {
+  .group-cards { grid-template-columns: 1fr; }
+}
+
+.group-card {
+  padding: var(--sp-7) var(--sp-6);
+  background: var(--clr-bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+}
+
+.group-card--active {
+  border-color: var(--clr-border-glow);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.group-card--active::before {
+  content: 'Current';
+  position: absolute;
+  top: var(--sp-4);
+  right: var(--sp-4);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent-blue);
+  background: rgba(30,28,206,0.08);
+  border: 1px solid rgba(30,28,206,0.2);
+  padding: 2px var(--sp-2);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.06em;
+}
+
+.group-card:hover { transform: translateY(-4px); }
+
+.group-card__icon { font-size: 40px; margin-bottom: var(--sp-4); }
+.group-card__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--clr-text-primary);
+  margin-bottom: var(--sp-2);
+}
+.group-card__focus {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  color: var(--clr-accent-blue);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+}
+.group-card__desc {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  line-height: var(--lh-relaxed);
+  max-width: none;
+}

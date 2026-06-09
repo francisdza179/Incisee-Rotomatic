@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Incise Rotomatic LLP — Submit a Request for Quote (RFQ), upload your drawing or specification, and get a response within 24 hours from our engineering team in Chennai.">
+  <title>Contact &amp; RFQ | Incise Rotomatic LLP</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components/navbar.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <style>
+    /* ── Contact Layout ─────────────────────────────────────── */
+    .contact-page { padding: var(--sp-16) 0 var(--sp-24); background: var(--clr-bg-base); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 2fr; gap: var(--sp-12); align-items: start; }
+    @media(max-width:900px){ .contact-inner{grid-template-columns:1fr;} }
+
+    /* ── Info Panel ─────────────────────────────────────────── */
+    .contact-info { position: sticky; top: calc(var(--navbar-height) + var(--sp-6)); }
+    .contact-info__title { font-family:var(--font-display); font-size:var(--fs-2xl); font-weight:var(--fw-bold); color:var(--clr-text-primary); margin-bottom:var(--sp-3); }
+    .contact-info__subtitle { font-size:var(--fs-sm); color:var(--clr-text-muted); line-height:var(--lh-relaxed); margin-bottom:var(--sp-8); max-width:none; }
+    .contact-detail { display:flex; align-items:flex-start; gap:var(--sp-4); padding:var(--sp-4); background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-xl); margin-bottom:var(--sp-3); transition:border-color var(--transition-base); }
+    .contact-detail:hover { border-color:var(--clr-border-glow); }
+    .contact-detail__icon { width:40px; height:40px; border-radius:var(--radius-md); background:rgba(30,28,206,0.07); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+    .contact-detail__label { font-size:var(--fs-xs); font-weight:var(--fw-semibold); color:var(--clr-text-muted); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:var(--sp-1); }
+    .contact-detail__value { font-size:var(--fs-sm); font-weight:var(--fw-semibold); color:var(--clr-text-primary); }
+    .contact-detail__value a { color:var(--clr-text-primary); transition:color var(--transition-fast); }
+    .contact-detail__value a:hover { color:var(--clr-accent-blue-lt); }
+    .contact-cert { margin-top:var(--sp-6); padding:var(--sp-4); background:rgba(8,178,25,0.06); border:1px solid rgba(8,178,25,0.18); border-radius:var(--radius-xl); text-align:center; }
+    .contact-cert__icon { font-size:32px; margin-bottom:var(--sp-2); }
+    .contact-cert__title { font-size:var(--fs-sm); font-weight:var(--fw-bold); color:var(--clr-accent-green); margin-bottom:var(--sp-1); }
+    .contact-cert__sub { font-size:var(--fs-xs); color:var(--clr-text-muted); }
+
+    /* ── RFQ Form ───────────────────────────────────────────── */
+    .rfq-form-wrap { background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-2xl); padding:var(--sp-10); }
+    @media(max-width:640px){ .rfq-form-wrap{padding:var(--sp-6);} }
+    .rfq-form__header { margin-bottom:var(--sp-8); }
+    .rfq-form__title { font-family:var(--font-display); font-size:var(--fs-2xl); font-weight:var(--fw-bold); color:var(--clr-text-primary); margin-bottom:var(--sp-2); }
+    .rfq-form__subtitle { font-size:var(--fs-sm); color:var(--clr-text-muted); max-width:none; line-height:var(--lh-relaxed); }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-5); }
+    @media(max-width:640px){ .form-grid{grid-template-columns:1fr;} }
+    .form-grid--full { grid-column:1/-1; }
+    .form-field { display:flex; flex-direction:column; gap:var(--sp-2); }
+    .form-label { font-size:var(--fs-sm); font-weight:var(--fw-semibold); color:var(--clr-text-secondary); }
+    .form-label .req { color:var(--clr-accent-green); margin-left:2px; }
+    .form-input, .form-select, .form-textarea {
+      width:100%; padding:var(--sp-3) var(--sp-4);
+      background:var(--clr-bg-surface); border:1.5px solid var(--clr-border);
+      border-radius:var(--radius-md); color:var(--clr-text-primary);
+      font-size:var(--fs-sm); font-family:var(--font-body);
+      transition:border-color var(--transition-base), box-shadow var(--transition-base);
+      -webkit-appearance:none;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color:var(--clr-text-muted); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color:var(--clr-accent-blue);
+      box-shadow:0 0 0 3px rgba(30,28,206,0.12);
+      outline:none;
+    }
+    .form-select { cursor:pointer; }
+    .form-textarea { resize:vertical; min-height:120px; }
+
+    /* ── Upload Zone ────────────────────────────────────────── */
+    .upload-zone {
+      border:2px dashed var(--clr-border); border-radius:var(--radius-xl);
+      padding:var(--sp-10) var(--sp-6); text-align:center;
+      cursor:pointer; transition:all var(--transition-base);
+      background:var(--clr-bg-surface);
+      position:relative;
+    }
+    .upload-zone:hover, .upload-zone.dragover {
+      border-color:var(--clr-accent-blue);
+      background:rgba(30,28,206,0.03);
+    }
+    .upload-zone input[type="file"] { position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; height:100%; }
+    .upload-zone__icon { font-size:40px; margin-bottom:var(--sp-4); }
+    .upload-zone__title { font-size:var(--fs-base); font-weight:var(--fw-semibold); color:var(--clr-text-primary); margin-bottom:var(--sp-2); }
+    .upload-zone__sub { font-size:var(--fs-sm); color:var(--clr-text-muted); margin-bottom:var(--sp-3); max-width:none; }
+    .upload-zone__formats { display:flex; flex-wrap:wrap; justify-content:center; gap:var(--sp-2); }
+    .upload-format { font-size:var(--fs-xs); font-family:var(--font-mono); padding:var(--sp-1) var(--sp-2); background:rgba(30,28,206,0.07); border:1px solid rgba(30,28,206,0.15); border-radius:var(--radius-sm); color:var(--clr-accent-blue); }
+    .upload-preview { display:none; align-items:center; gap:var(--sp-3); margin-top:var(--sp-4); padding:var(--sp-3); background:rgba(8,178,25,0.06); border:1px solid rgba(8,178,25,0.18); border-radius:var(--radius-md); }
+    .upload-preview.visible { display:flex; }
+    .upload-preview__icon { font-size:24px; }
+    .upload-preview__name { font-size:var(--fs-sm); color:var(--clr-accent-green); font-weight:var(--fw-semibold); }
+    .upload-preview__size { font-size:var(--fs-xs); color:var(--clr-text-muted); }
+
+    /* ── Submit ─────────────────────────────────────────────── */
+    .form-submit-row { display:flex; align-items:center; justify-content:space-between; gap:var(--sp-6); flex-wrap:wrap; margin-top:var(--sp-8); padding-top:var(--sp-6); border-top:1px solid var(--clr-border); }
+    .form-note { font-size:var(--fs-xs); color:var(--clr-text-muted); line-height:var(--lh-relaxed); max-width:40ch; max-width:none; }
+    .form-submit { padding:var(--sp-4) var(--sp-8); background:var(--clr-accent-blue); color:var(--clr-text-inverse); border-radius:var(--radius-md); font-size:var(--fs-base); font-weight:var(--fw-bold); cursor:pointer; transition:all var(--transition-base); border:none; display:flex; align-items:center; gap:var(--sp-3); box-shadow:0 4px 15px rgba(30,28,206,0.25); }
+    .form-submit:hover { background:#1816B0; box-shadow:var(--shadow-glow-blue); transform:translateY(-2px); }
+    .form-submit:disabled { opacity:0.6; cursor:not-allowed; transform:none; }
+
+    /* ── Success State ───────────────────────────────────────── */
+    .form-success { display:none; text-align:center; padding:var(--sp-16) var(--sp-8); }
+    .form-success.visible { display:block; }
+    .form-success__icon { font-size:64px; margin-bottom:var(--sp-4); }
+    .form-success__title { font-family:var(--font-display); font-size:var(--fs-2xl); font-weight:var(--fw-bold); color:var(--clr-text-primary); margin-bottom:var(--sp-3); }
+    .form-success__message { font-size:var(--fs-base); color:var(--clr-text-secondary); max-width:45ch; margin:0 auto; line-height:var(--lh-relaxed); }
+
+    /* ── Error ───────────────────────────────────────────────── */
+    .form-error { font-size:var(--fs-xs); color:#F87171; margin-top:var(--sp-1); display:none; }
+    .form-field.has-error .form-input,
+    .form-field.has-error .form-select,
+    .form-field.has-error .form-textarea { border-color:#F87171; }
+    .form-field.has-error .form-error { display:block; }
+
+    /* ── Map Section ─────────────────────────────────────────── */
+    .map-section { padding:var(--sp-16) 0; background:var(--clr-bg-surface); }
+    .map-embed { border-radius:var(--radius-2xl); overflow:hidden; height:380px; border:1px solid var(--clr-border); }
+    .map-embed iframe { width:100%; height:100%; border:none; }
+  </style>
+<link rel="icon" type="image/png" href="images/brand/Incise Rotomatic Favicon.png">
+</head>
+<body>
+<header class="navbar scrolled" id="navbar" role="banner">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+                <img src="images/brand/Incise Rotomatic Logo Horizontal.png" alt="Incise Rotomatic Logo">
+      </a>
+      <nav class="navbar__nav" role="navigation" aria-label="Primary navigation">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="about.html" class="navbar__link">About</a>
+
+        <div class="navbar__dropdown">
+          <a href="industries.html" class="navbar__link navbar__dropdown-toggle">
+            Industries
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="industries/automotive.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🚗</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Automotive</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">OEM-grade die-cuts &amp; gaskets</div>
+              </div>
+            </a>
+            <a href="industries/electronics.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">💡</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Electronics</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Thermal pads &amp; protective films</div>
+              </div>
+            </a>
+            <a href="industries/medical.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🏥</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Medical</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Sterile membranes &amp; heart-monitor pads</div>
+              </div>
+            </a>
+            <a href="industries/industrial.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🏭</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Industrial</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Foam gaskets &amp; sealing solutions</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar__dropdown">
+          <a href="products.html" class="navbar__link navbar__dropdown-toggle">
+            Products
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="products/epfte-membranes.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🔬</div>
+              <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">ePTFE Membranes</div>
+            </a>
+            <a href="products/sealing-gaskets.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">⚙️</div>
+              <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Sealing Gaskets</div>
+            </a>
+            <a href="products/electronic-die-cuts.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">💡</div>
+              <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Electronic Die-Cuts</div>
+            </a>
+            <a href="products.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">📦</div>
+              <div style="font-weight:600;color:var(--clr-accent-blue-lt);font-size:0.8rem;">View All Products →</div>
+            </a>
+          </div>
+        </div>
+
+        <a href="manufacturing.html" class="navbar__link">Manufacturing</a>
+        <a href="resources.html" class="navbar__link">Resources</a>
+        <a href="contact.html" class="navbar__link active">Contact</a>
+      </nav>
+      <div class="navbar__cta"><a href="contact.html#rfq" class="navbar__rfq">✦ Request a Quote</a></div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="navbar__mobile" id="mobile-menu">
+    <a href="index.html" class="navbar__mobile-link">Home</a>
+    <a href="about.html" class="navbar__mobile-link">About</a>
+    <a href="industries.html" class="navbar__mobile-link">Industries</a>
+    <a href="products.html" class="navbar__mobile-link">Products</a>
+    <a href="manufacturing.html" class="navbar__mobile-link">Manufacturing</a>
+    <a href="resources.html" class="navbar__mobile-link">Resources</a>
+    <a href="contact.html" class="navbar__mobile-link">Contact</a>
+    <div class="navbar__mobile-cta"><a href="#rfq" class="navbar__mobile-rfq">✦ Submit RFQ</a></div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-label="Contact header">
+  <div class="page-hero__grid" aria-hidden="true"></div>
+  <div class="page-hero__gear page-hero__gear--br" aria-hidden="true"></div>
+  <div class="blueprint-circle" style="top:-30px;left:5%;width:100px;height:100px;" aria-hidden="true"></div>
+  <div class="blueprint-circle" style="bottom:5%;right:8%;width:70px;height:70px;" aria-hidden="true"></div>
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span class="sep">›</span><span class="current">Contact &amp; RFQ</span>
+    </nav>
+    <span class="section-label page-hero-label">Get in Touch</span>
+    <h1 class="page-hero-title">Contact Us &amp; <span class="gradient-text">Request a Quote</span></h1>
+    <p class="page-hero-subtitle">Share your drawing or specification — our engineering team will respond with a tailored technical quote within 24 business hours.</p>
+  </div>
+</section>
+
+<!-- CONTACT + RFQ -->
+<section class="contact-page" id="rfq" aria-label="Contact and RFQ form">
+  <div class="container">
+    <div class="contact-inner">
+
+      <!-- Info Panel -->
+      <div class="contact-info" data-reveal="left">
+        <div class="contact-info__title">Contact Information</div>
+        <p class="contact-info__subtitle">Reach our team directly or fill the form to submit your requirements. We respond within 24 hours on business days.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail__icon">📍</div>
+          <div>
+            <div class="contact-detail__label">Address</div>
+            <div class="contact-detail__value">No 42, JAK Industrial Park,<br>Vellanur, Chennai – 600 062,<br>Tamil Nadu, India</div>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail__icon">📞</div>
+          <div>
+            <div class="contact-detail__label">Phone</div>
+            <div class="contact-detail__value"><a href="tel:+919884554999">+91 98845 54999</a></div>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail__icon">✉️</div>
+          <div>
+            <div class="contact-detail__label">Email</div>
+            <div class="contact-detail__value"><a href="mailto:cs@inciserotomatic.com">cs@inciserotomatic.com</a></div>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail__icon">🕐</div>
+          <div>
+            <div class="contact-detail__label">Response Time</div>
+            <div class="contact-detail__value">Within 24 business hours</div>
+          </div>
+        </div>
+
+        <div class="contact-cert">
+          <div class="contact-cert__icon">🏆</div>
+          <div class="contact-cert__title">IATF 16949:2016 Certified</div>
+          <div class="contact-cert__sub">GST: 33AAZFI6137B1ZZ</div>
+        </div>
+
+        <div style="margin-top:var(--sp-6);">
+          <div style="font-size:var(--fs-xs);font-weight:var(--fw-semibold);color:var(--clr-text-muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:var(--sp-3);">Find Us Online</div>
+          <div style="display:flex;gap:var(--sp-3);">
+            <a href="#" class="footer__social-link" aria-label="LinkedIn" style="text-decoration:none;width:36px;height:36px;border-radius:var(--radius-md);background:rgba(0,0,0,0.03);border:1px solid var(--clr-border);display:flex;align-items:center;justify-content:center;color:var(--clr-text-muted);font-size:15px;transition:all var(--transition-base);">in</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter" style="text-decoration:none;width:36px;height:36px;border-radius:var(--radius-md);background:rgba(0,0,0,0.03);border:1px solid var(--clr-border);display:flex;align-items:center;justify-content:center;color:var(--clr-text-muted);font-size:15px;transition:all var(--transition-base);">𝕏</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RFQ Form -->
+      <div data-reveal="right">
+        <div class="rfq-form-wrap">
+          <div class="rfq-form__header">
+            <div class="rfq-form__title">Request for Quotation</div>
+            <p class="rfq-form__subtitle">Fill in your details and project requirements below. Upload a drawing or specification file to help us provide the most accurate quote. All enquiries are treated confidentially.</p>
+          </div>
+
+          <form id="rfq-form" novalidate>
+            <div class="form-grid">
+
+              <div class="form-field" id="field-name">
+                <label class="form-label" for="full-name">Full Name <span class="req">*</span></label>
+                <input class="form-input" type="text" id="full-name" name="full_name" placeholder="Your full name" autocomplete="name" required>
+                <span class="form-error">Please enter your full name</span>
+              </div>
+
+              <div class="form-field" id="field-company">
+                <label class="form-label" for="company-name">Company Name <span class="req">*</span></label>
+                <input class="form-input" type="text" id="company-name" name="company_name" placeholder="Your company" autocomplete="organization" required>
+                <span class="form-error">Please enter your company name</span>
+              </div>
+
+              <div class="form-field" id="field-email">
+                <label class="form-label" for="email">Work Email <span class="req">*</span></label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+                <span class="form-error">Please enter a valid email address</span>
+              </div>
+
+              <div class="form-field" id="field-phone">
+                <label class="form-label" for="phone">Phone Number <span class="req">*</span></label>
+                <input class="form-input" type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" required>
+                <span class="form-error">Please enter your phone number</span>
+              </div>
+
+              <div class="form-field" id="field-industry">
+                <label class="form-label" for="industry">Industry <span class="req">*</span></label>
+                <select class="form-select" id="industry" name="industry" required>
+                  <option value="" disabled selected>Select your industry</option>
+                  <option value="automotive">Automotive</option>
+                  <option value="electronics">Electronics</option>
+                  <option value="medical">Medical / Healthcare</option>
+                  <option value="industrial">Industrial</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="form-error">Please select your industry</span>
+              </div>
+
+              <div class="form-field" id="field-product">
+                <label class="form-label" for="product">Product of Interest</label>
+                <select class="form-select" id="product" name="product">
+                  <option value="" disabled selected>Select a product (optional)</option>
+                  <option value="eptfe-membranes">ePTFE Membranes</option>
+                  <option value="sealing-gaskets">Sealing Gaskets</option>
+                  <option value="foam-gaskets">Foam Gaskets</option>
+                  <option value="silicone-pads">Silicone Compression Pads</option>
+                  <option value="electronic-die-cuts">Electronic Die-Cuts</option>
+                  <option value="medical-die-cuts">Medical Die-Cuts</option>
+                  <option value="protective-film">Protective Film</option>
+                  <option value="thermal-grease-pads">Thermal Grease Pads</option>
+                  <option value="vhb-tape">VHB Tape Die-Cuts</option>
+                  <option value="airbag-fix-tape">Airbag Fix Tape</option>
+                  <option value="logos-labels">Die-Cut Logos &amp; Labels</option>
+                  <option value="custom">Custom Die-Cut Parts</option>
+                </select>
+              </div>
+
+              <div class="form-field form-grid--full" id="field-desc">
+                <label class="form-label" for="description">Project Description / Requirements <span class="req">*</span></label>
+                <textarea class="form-textarea" id="description" name="description" placeholder="Describe your project — material, dimensions, quantity, application, and any specific requirements..." required style="min-height:140px;"></textarea>
+                <span class="form-error">Please describe your project requirements</span>
+              </div>
+
+              <!-- Drawing Upload -->
+              <div class="form-field form-grid--full" id="field-upload">
+                <label class="form-label">Upload Drawing or Specification</label>
+                <div class="upload-zone" id="upload-zone">
+                  <input type="file" id="drawing-upload" name="drawing" accept=".pdf,.dwg,.dxf,.step,.stp,.iges,.igs,.png,.jpg,.jpeg" multiple aria-label="Upload drawing or specification">
+                  <div class="upload-zone__icon">📎</div>
+                  <div class="upload-zone__title">Drop your drawing here or click to browse</div>
+                  <p class="upload-zone__sub">Upload technical drawings, specifications, or reference images</p>
+                  <div class="upload-zone__formats">
+                    <span class="upload-format">.PDF</span>
+                    <span class="upload-format">.DWG</span>
+                    <span class="upload-format">.DXF</span>
+                    <span class="upload-format">.STEP</span>
+                    <span class="upload-format">.IGES</span>
+                    <span class="upload-format">.PNG</span>
+                    <span class="upload-format">.JPG</span>
+                  </div>
+                </div>
+                <div class="upload-preview" id="upload-preview">
+                  <span class="upload-preview__icon">📄</span>
+                  <div>
+                    <div class="upload-preview__name" id="upload-filename"></div>
+                    <div class="upload-preview__size" id="upload-size"></div>
+                  </div>
+                </div>
+                <div style="font-size:var(--fs-xs);color:var(--clr-text-muted);margin-top:var(--sp-2);">Maximum file size: 10MB per file · Multiple files accepted · Treated with strict confidentiality</div>
+              </div>
+
+              <div class="form-field" id="field-qty">
+                <label class="form-label" for="quantity">Estimated Quantity</label>
+                <input class="form-input" type="text" id="quantity" name="quantity" placeholder="e.g. 500 pcs/month">
+              </div>
+
+              <div class="form-field" id="field-timeline">
+                <label class="form-label" for="timeline">Target Timeline</label>
+                <select class="form-select" id="timeline" name="timeline">
+                  <option value="" disabled selected>When do you need delivery?</option>
+                  <option value="asap">As soon as possible</option>
+                  <option value="2weeks">Within 2 weeks</option>
+                  <option value="1month">Within 1 month</option>
+                  <option value="3months">Within 3 months</option>
+                  <option value="flexible">Flexible / Not urgent</option>
+                </select>
+              </div>
+
+              <div class="form-field form-grid--full" id="field-source">
+                <label class="form-label" for="source">How did you find us?</label>
+                <select class="form-select" id="source" name="source">
+                  <option value="" disabled selected>Select one (optional)</option>
+                  <option value="google">Google Search</option>
+                  <option value="referral">Client Referral</option>
+                  <option value="linkedin">LinkedIn</option>
+                  <option value="industry-event">Industry Event / Exhibition</option>
+                  <option value="existing-client">Existing Client</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div class="form-submit-row">
+              <p class="form-note">🔒 Your enquiry is treated with strict confidentiality. We will never share your details or drawings with third parties.</p>
+              <button type="submit" class="form-submit" id="rfq-submit-btn">
+                <span id="submit-text">Submit RFQ</span>
+                <span id="submit-icon">→</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Success State -->
+          <div class="form-success" id="form-success">
+            <div class="form-success__icon">✅</div>
+            <div class="form-success__title">Quote Request Received!</div>
+            <p class="form-success__message">Thank you for reaching out to Incise Rotomatic. Our engineering team will review your requirements and respond within 24 business hours.</p>
+            <div style="margin-top:var(--sp-6);display:flex;gap:var(--sp-4);justify-content:center;flex-wrap:wrap;">
+              <a href="index.html" class="btn btn-outline">Return to Home</a>
+              <a href="products.html" class="btn btn-primary">Browse Products</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map-section" aria-label="Our location">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:var(--sp-8);" data-reveal>
+      <span class="section-label" style="justify-content:center;">Find Us</span>
+      <h2 class="section-title" style="text-align:center;">Our <span>Facility</span></h2>
+      <p style="color:var(--clr-text-muted);font-size:var(--fs-sm);text-align:center;">No 42, JAK Industrial Park,<br>Vellanur, Chennai – 600 062,<br>Tamil Nadu, India</p>
+    </div>
+    <div class="map-embed" data-reveal>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.5!2d80.1!3d13.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA2JzAwLjAiTiA4MMKwMDYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Incise Rotomatic LLP location map">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+                    <img src="images/brand/Incise Rotomatic Logo Horizontal.png" alt="Incise Rotomatic Logo" style="width: 191px; height: auto;">
+        </a>
+        <p class="footer__tagline">Precision die-cutting. IATF 16949:2016 certified, Chennai.</p>
+        <div class="footer__cert"><span>🏆</span> IATF 16949:2016 Certified</div>
+      </div>
+      <div>
+        <div class="footer__col-title">Company</div>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="manufacturing.html" class="footer__link">Manufacturing</a></li>
+          <li><a href="resources.html" class="footer__link">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Industries</div>
+        <ul class="footer__links">
+          <li><a href="industries/automotive.html" class="footer__link">Automotive</a></li>
+          <li><a href="industries/electronics.html" class="footer__link">Electronics</a></li>
+          <li><a href="industries/medical.html" class="footer__link">Medical</a></li>
+          <li><a href="industries/industrial.html" class="footer__link">Industrial</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__contact-items">
+          <div class="footer__contact-item"><div class="footer__contact-icon">📍</div><div class="footer__contact-text">No 42, JAK Industrial Park,<br>Vellanur, Chennai – 600 062,<br>Tamil Nadu, India</div></div>
+          <div class="footer__contact-item"><div class="footer__contact-icon">📞</div><div class="footer__contact-text"><a href="tel:+919884554999">+91 98845 54999</a></div></div>
+          <div class="footer__contact-item"><div class="footer__contact-icon">✉️</div><div class="footer__contact-text"><a href="mailto:cs@inciserotomatic.com">cs@inciserotomatic.com</a></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copyright">© 2024 Incise Rotomatic LLP. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+        <a href="terms-of-use.html" class="footer__legal-link">Terms of Use</a>
+        <span class="footer__gst">GST: 33AAZFI6137B1ZZ</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/rfq.js"></script>
+</body>
+</html>
+
+

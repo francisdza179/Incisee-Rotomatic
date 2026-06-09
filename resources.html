@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Technical Resource Centre — datasheets, FAQs, material glossary, and IATF documentation from Incise Rotomatic LLP, Chennai.">
+  <title>Technical Resources | Incise Rotomatic LLP</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components/navbar.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <style>
+    .resources-page { padding:var(--sp-20) 0; background:var(--clr-bg-base); }
+    .resource-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-5); margin-top:var(--sp-10); }
+    @media(max-width:768px){ .resource-grid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:500px){ .resource-grid{grid-template-columns:1fr;} }
+    .resource-card { padding:var(--sp-6); background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-xl); display:flex; flex-direction:column; gap:var(--sp-3); transition:all var(--transition-slow); cursor:pointer; }
+    .resource-card:hover { border-color:var(--clr-border-glow); box-shadow:var(--shadow-glow-blue); transform:translateY(-3px); }
+    .resource-card__icon { font-size:36px; }
+    .resource-card__type { font-size:var(--fs-xs); font-weight:var(--fw-semibold); color:var(--clr-accent-blue-lt); letter-spacing:0.08em; text-transform:uppercase; }
+    .resource-card__name { font-family:var(--font-display); font-size:var(--fs-md); font-weight:var(--fw-bold); color:var(--clr-text-primary); }
+    .resource-card__desc { font-size:var(--fs-sm); color:var(--clr-text-muted); line-height:var(--lh-relaxed); max-width:none; flex:1; }
+    .resource-card__action { display:flex; align-items:center; gap:var(--sp-2); font-size:var(--fs-sm); font-weight:var(--fw-semibold); color:var(--clr-accent-blue-lt); padding-top:var(--sp-3); border-top:1px solid var(--clr-border); }
+    /* Accordion */
+    .faq-section { padding:var(--sp-20) 0; background:var(--clr-bg-surface); }
+    .accordion { display:flex; flex-direction:column; gap:var(--sp-3); max-width:800px; margin:var(--sp-10) auto 0; }
+    .accordion__item { background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-xl); overflow:hidden; transition:border-color var(--transition-base); }
+    .accordion__item.open { border-color:var(--clr-border-glow); }
+    .accordion__header { display:flex; align-items:center; justify-content:space-between; gap:var(--sp-4); padding:var(--sp-5) var(--sp-6); cursor:pointer; }
+    .accordion__question { font-size:var(--fs-base); font-weight:var(--fw-semibold); color:var(--clr-text-primary); }
+    .accordion__chevron { width:20px; height:20px; border-radius:50%; background:rgba(30,28,206,0.07); border:1px solid var(--clr-border-glow); display:flex; align-items:center; justify-content:center; color:var(--clr-accent-blue); font-size:10px; transition:transform var(--transition-base); flex-shrink:0; }
+    .accordion__item.open .accordion__chevron { transform:rotate(180deg); }
+    .accordion__body { display:none; padding:0 var(--sp-6) var(--sp-5); }
+    .accordion__item.open .accordion__body { display:block; }
+    .accordion__answer { font-size:var(--fs-sm); color:var(--clr-text-muted); line-height:var(--lh-relaxed); max-width:none; }
+    /* Glossary */
+    .glossary-section { padding:var(--sp-20) 0; background:var(--clr-bg-base); }
+    .glossary-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--sp-5); margin-top:var(--sp-10); }
+    @media(max-width:640px){ .glossary-grid{grid-template-columns:1fr;} }
+    .glossary-item { padding:var(--sp-5) var(--sp-6); background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-xl); }
+    .glossary-term { font-family:var(--font-mono); font-size:var(--fs-sm); font-weight:var(--fw-bold); color:var(--clr-accent-green); margin-bottom:var(--sp-2); letter-spacing:0.04em; }
+    .glossary-def { font-size:var(--fs-sm); color:var(--clr-text-muted); line-height:var(--lh-relaxed); max-width:none; }
+  </style>
+<link rel="icon" type="image/png" href="images/brand/Incise Rotomatic Favicon.png">
+</head>
+<body>
+<header class="navbar scrolled" id="navbar" role="banner">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+                <img src="images/brand/Incise Rotomatic Logo Horizontal.png" alt="Incise Rotomatic Logo">
+      </a>
+      <nav class="navbar__nav" role="navigation" aria-label="Primary navigation">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="about.html" class="navbar__link">About</a>
+
+        <div class="navbar__dropdown">
+          <a href="industries.html" class="navbar__link navbar__dropdown-toggle">
+            Industries
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="industries/automotive.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🚗</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Automotive</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">OEM-grade die-cuts &amp; gaskets</div>
+              </div>
+            </a>
+            <a href="industries/electronics.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">💡</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Electronics</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Thermal pads &amp; protective films</div>
+              </div>
+            </a>
+            <a href="industries/medical.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🏥</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Medical</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Sterile membranes &amp; heart-monitor pads</div>
+              </div>
+            </a>
+            <a href="industries/industrial.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🏭</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Industrial</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Foam gaskets &amp; sealing solutions</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar__dropdown">
+          <a href="products.html" class="navbar__link navbar__dropdown-toggle">
+            Products
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="products/epfte-membranes.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🔬</div>
+              <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">ePTFE Membranes</div>
+            </a>
+            <a href="products/sealing-gaskets.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">⚙️</div>
+              <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Sealing Gaskets</div>
+            </a>
+            <a href="products/electronic-die-cuts.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">💡</div>
+              <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Electronic Die-Cuts</div>
+            </a>
+            <a href="products.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">📦</div>
+              <div style="font-weight:600;color:var(--clr-accent-blue-lt);font-size:0.8rem;">View All Products →</div>
+            </a>
+          </div>
+        </div>
+
+        <a href="manufacturing.html" class="navbar__link">Manufacturing</a>
+        <a href="resources.html" class="navbar__link active">Resources</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+      </nav>
+      <div class="navbar__cta"><a href="contact.html#rfq" class="navbar__rfq">✦ Request a Quote</a></div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="navbar__mobile" id="mobile-menu">
+    <a href="index.html" class="navbar__mobile-link">Home</a>
+    <a href="about.html" class="navbar__mobile-link">About</a>
+    <a href="industries.html" class="navbar__mobile-link">Industries</a>
+    <a href="products.html" class="navbar__mobile-link">Products</a>
+    <a href="manufacturing.html" class="navbar__mobile-link">Manufacturing</a>
+    <a href="resources.html" class="navbar__mobile-link">Resources</a>
+    <a href="contact.html" class="navbar__mobile-link">Contact</a>
+    <div class="navbar__mobile-cta"><a href="contact.html#rfq" class="navbar__mobile-rfq">✦ Request a Quote</a></div>
+  </div>
+</header>
+
+<section class="page-hero" aria-label="Resources header">
+  <div class="page-hero__grid" aria-hidden="true"></div>
+  <div class="page-hero__gear page-hero__gear--br" aria-hidden="true"></div>
+  <div class="blueprint-circle" style="top:8%;right:5%;width:70px;height:70px;" aria-hidden="true"></div>
+  <div class="blueprint-circle" style="bottom:12%;left:3%;width:55px;height:55px;" aria-hidden="true"></div>
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span class="sep">›</span><span class="current">Resources</span>
+    </nav>
+    <span class="section-label page-hero-label">Knowledge Base</span>
+    <h1 class="page-hero-title">Technical <span class="gradient-text">Resource Centre</span></h1>
+    <p class="page-hero-subtitle">Datasheets, certifications, application guides, FAQs, and technical glossary — everything you need to evaluate and specify our products.</p>
+  </div>
+</section>
+
+<!-- DOCUMENT LIBRARY -->
+<section class="resources-page" aria-label="Document library">
+  <div class="container">
+    <div data-reveal style="text-align:center;max-width:50ch;margin:0 auto var(--sp-4);">
+      <span class="section-label" style="justify-content:center;">Downloads</span>
+      <h2 class="section-title">Document <span>Library</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">Request any document below — our team will send it to you directly.</p>
+    </div>
+    <div class="resource-grid">
+      <div class="resource-card" data-reveal onclick="requestDoc('IATF 16949:2016 Certificate')" role="button" tabindex="0" id="res-iatf">
+        <div class="resource-card__icon">🏆</div>
+        <div class="resource-card__type">Certificate</div>
+        <div class="resource-card__name">IATF 16949:2016 Certificate</div>
+        <p class="resource-card__desc">Our current IATF 16949:2016 quality management system certification — valid for automotive OEM supplier qualification.</p>
+        <div class="resource-card__action">📩 Request Document →</div>
+      </div>
+      <div class="resource-card" data-reveal data-reveal-delay="50" onclick="requestDoc('ePTFE Membrane Datasheet')" role="button" tabindex="0" id="res-eptfe-ds">
+        <div class="resource-card__icon">🔬</div>
+        <div class="resource-card__type">Datasheet</div>
+        <div class="resource-card__name">ePTFE Membrane Datasheet</div>
+        <p class="resource-card__desc">Technical specifications for our ePTFE membrane range including pore size, water entry pressure, air flow, and temperature ratings.</p>
+        <div class="resource-card__action">📩 Request Document →</div>
+      </div>
+      <div class="resource-card" data-reveal data-reveal-delay="100" onclick="requestDoc('Thermal Interface Materials Guide')" role="button" tabindex="0" id="res-tim-ds">
+        <div class="resource-card__icon">🌡️</div>
+        <div class="resource-card__type">Application Guide</div>
+        <div class="resource-card__name">Thermal Interface Materials</div>
+        <p class="resource-card__desc">Selection guide for thermal grease pads and phase-change materials — covering conductivity, working temperature range, and compressibility data.</p>
+        <div class="resource-card__action">📩 Request Document →</div>
+      </div>
+      <div class="resource-card" data-reveal data-reveal-delay="150" onclick="requestDoc('Automotive Die-Cut Capabilities Overview')" role="button" tabindex="0" id="res-auto-cap">
+        <div class="resource-card__icon">🚗</div>
+        <div class="resource-card__type">Capabilities Overview</div>
+        <div class="resource-card__name">Automotive Capabilities</div>
+        <p class="resource-card__desc">Overview of our automotive die-cutting capabilities, tolerance range, approved materials, and OEM qualification documentation.</p>
+        <div class="resource-card__action">📩 Request Document →</div>
+      </div>
+      <div class="resource-card" data-reveal data-reveal-delay="200" onclick="requestDoc('Foam Gasket Material Datasheet')" role="button" tabindex="0" id="res-foam-ds">
+        <div class="resource-card__icon">💠</div>
+        <div class="resource-card__type">Datasheet</div>
+        <div class="resource-card__name">Foam Gasket Materials</div>
+        <p class="resource-card__desc">Technical data for our foam gasket material portfolio — density, compression deflection, temperature range, and IP sealing performance.</p>
+        <div class="resource-card__action">📩 Request Document →</div>
+      </div>
+      <div class="resource-card" data-reveal data-reveal-delay="250" onclick="requestDoc('Company Profile')" role="button" tabindex="0" id="res-profile">
+        <div class="resource-card__icon">📋</div>
+        <div class="resource-card__type">Company Profile</div>
+        <div class="resource-card__name">Incise Rotomatic Profile</div>
+        <p class="resource-card__desc">Complete company profile including capabilities overview, certifications, equipment list, client references, and contact information.</p>
+        <div class="resource-card__action">📩 Request Document →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" aria-label="Frequently asked questions">
+  <div class="container">
+    <div data-reveal style="text-align:center;max-width:50ch;margin:0 auto var(--sp-4);">
+      <span class="section-label" style="justify-content:center;">Questions &amp; Answers</span>
+      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+    </div>
+    <div class="accordion" data-reveal>
+
+      <div class="accordion__item open" id="faq-1">
+        <div class="accordion__header" role="button" aria-expanded="true">
+          <span class="accordion__question">What is rotary die-cutting and how does it differ from flatbed die-cutting?</span>
+          <span class="accordion__chevron">▼</span>
+        </div>
+        <div class="accordion__body">
+          <p class="accordion__answer">Rotary die-cutting uses a cylindrical die that rotates against a roller to cut material continuously from a roll — ideal for high-volume production with consistent quality and fast throughput. Flatbed die-cutting uses a flat die pressed against sheet material — better for lower volumes, thicker materials, or complex multi-layer constructions. At Incise Rotomatic, we offer both, selecting the optimal process based on your material, volume, and tolerance requirements.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item" id="faq-2">
+        <div class="accordion__header" role="button" aria-expanded="false">
+          <span class="accordion__question">What is your minimum order quantity (MOQ)?</span>
+          <span class="accordion__chevron">▼</span>
+        </div>
+        <div class="accordion__body">
+          <p class="accordion__answer">MOQ varies by product and die-cut complexity. For standard die-cuts we can accommodate prototype quantities. For OEM production runs, typical MOQs start from 500–1000 pieces depending on material and complexity. Contact us with your specific requirement and we'll advise accordingly.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item" id="faq-3">
+        <div class="accordion__header" role="button" aria-expanded="false">
+          <span class="accordion__question">What file formats do you accept for drawings and specifications?</span>
+          <span class="accordion__chevron">▼</span>
+        </div>
+        <div class="accordion__body">
+          <p class="accordion__answer">We accept a wide range of formats including PDF, DWG (AutoCAD), DXF, STEP, IGES, and PNG/JPG for sketches. For best results, provide a 2D drawing with all critical dimensions annotated and material specification. Our engineers are happy to work from a sketch and develop the full drawing with you.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item" id="faq-4">
+        <div class="accordion__header" role="button" aria-expanded="false">
+          <span class="accordion__question">What tolerances can you hold in die-cutting?</span>
+          <span class="accordion__chevron">▼</span>
+        </div>
+        <div class="accordion__body">
+          <p class="accordion__answer">Achievable tolerances depend on material type, thickness, and part geometry. For rigid materials (films, laminates), we typically achieve ±0.1–0.2mm. For compressible materials (foams, rubbers), tolerances are typically ±0.3–0.5mm. Contact our engineering team with your specific requirements for a precise tolerance assessment.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item" id="faq-5">
+        <div class="accordion__header" role="button" aria-expanded="false">
+          <span class="accordion__question">What is ePTFE and what are its advantages for venting applications?</span>
+          <span class="accordion__chevron">▼</span>
+        </div>
+        <div class="accordion__body">
+          <p class="accordion__answer">ePTFE (expanded polytetrafluoroethylene) is a microporous membrane material with a unique combination of properties: it is highly hydrophobic (repels liquid water), breathable (allows air and water vapour through), chemically inert, and thermally stable. These properties make it ideal for pressure equalisation vents in electronics, automotive sensors, and medical devices — blocking water/dust ingress while allowing airflow to prevent pressure build-up that could compromise seals or damage components.</p>
+        </div>
+      </div>
+
+      <div class="accordion__item" id="faq-6">
+        <div class="accordion__header" role="button" aria-expanded="false">
+          <span class="accordion__question">How quickly can you turn around prototypes and production orders?</span>
+          <span class="accordion__chevron">▼</span>
+        </div>
+        <div class="accordion__body">
+          <p class="accordion__answer">Prototype lead times are typically 5–10 working days from drawing approval, depending on die tooling requirements. Production orders typically require 2–4 weeks from purchase order. Expedited timelines can be accommodated for critical needs — please discuss with our team at the enquiry stage.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GLOSSARY -->
+<section class="glossary-section" aria-label="Technical glossary">
+  <div class="container">
+    <div data-reveal style="text-align:center;max-width:50ch;margin:0 auto var(--sp-4);">
+      <span class="section-label" style="justify-content:center;">Reference Guide</span>
+      <h2 class="section-title">Technical <span>Glossary</span></h2>
+    </div>
+    <div class="glossary-grid" data-reveal>
+      <div class="glossary-item">
+        <div class="glossary-term">ePTFE</div>
+        <p class="glossary-def">Expanded Polytetrafluoroethylene — a microporous membrane material with hydrophobic, breathable, and chemically-inert properties. Used extensively for venting and filtration applications.</p>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">VHB Tape</div>
+        <p class="glossary-def">Very High Bond tape — a closed-cell acrylic foam tape by 3M with exceptional adhesive strength. Used in automotive structural bonding, sign mounting, and industrial assembly.</p>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Rotary Die-Cutting</div>
+        <p class="glossary-def">A continuous high-speed cutting process using a cylindrical die rotating against a matching anvil cylinder. Ideal for flexible materials in roll form at high production volumes.</p>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Web Converting</div>
+        <p class="glossary-def">The process of transforming flexible material (paper, film, foam, membrane) from roll stock into finished components through cutting, laminating, slitting, and other operations.</p>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">IATF 16949</div>
+        <p class="glossary-def">International Automotive Task Force quality management standard — the global benchmark for automotive supply chain quality, combining ISO 9001 requirements with automotive-specific additions.</p>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">TIM (Thermal Interface Material)</div>
+        <p class="glossary-def">Materials placed between heat-generating components and heat sinks to reduce thermal resistance. Includes thermal grease pads, phase-change materials, and thermally-conductive silicone pads.</p>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">DFM (Design for Manufacturability)</div>
+        <p class="glossary-def">Engineering process of reviewing and optimising a product design to ensure it can be efficiently and cost-effectively manufactured to specification and tolerance.</p>
+      </div>
+      <div class="glossary-item">
+        <div class="glossary-term">Flatbed Die-Cutting</div>
+        <p class="glossary-def">A die-cutting process using a flat steel-rule die pressed vertically against sheet or roll material. Used for lower volumes, thicker materials, and complex multi-layer constructions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner" aria-label="Resources CTA">
+  <div class="container">
+    <div class="cta-banner__inner" data-reveal>
+      <h2 class="cta-banner__title">Have a technical question? <span class="gradient-text">Let's talk.</span></h2>
+      <p class="cta-banner__subtitle">Our engineering team is available to discuss your application, material selection, and specification requirements.</p>
+      <div class="cta-banner__actions">
+        <a href="contact.html" class="btn btn-primary btn-lg" id="res-contact-btn">Contact Our Engineers</a>
+        <a href="contact.html#rfq" class="btn btn-outline btn-lg" id="res-rfq-btn">Submit an RFQ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__logo">
+                    <img src="images/brand/Incise Rotomatic Logo Horizontal.png" alt="Incise Rotomatic Logo" style="width: 191px; height: auto;">
+        </a>
+        <p class="footer__tagline">Precision die-cutting. IATF 16949:2016 certified, Chennai.</p>
+        <div class="footer__cert"><span>🏆</span> IATF 16949:2016 Certified</div>
+      </div>
+      <div>
+        <div class="footer__col-title">Company</div>
+        <ul class="footer__links">
+          <li><a href="about.html" class="footer__link">About Us</a></li>
+          <li><a href="manufacturing.html" class="footer__link">Manufacturing</a></li>
+          <li><a href="resources.html" class="footer__link">Resources</a></li>
+          <li><a href="contact.html#rfq" class="footer__link">Request a Quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Industries</div>
+        <ul class="footer__links">
+          <li><a href="industries/automotive.html" class="footer__link">Automotive</a></li>
+          <li><a href="industries/electronics.html" class="footer__link">Electronics</a></li>
+          <li><a href="industries/medical.html" class="footer__link">Medical</a></li>
+          <li><a href="industries/industrial.html" class="footer__link">Industrial</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Contact</div>
+        <div class="footer__contact-items">
+          <div class="footer__contact-item"><div class="footer__contact-icon">📞</div><div class="footer__contact-text"><a href="tel:+919884554999">+91 98845 54999</a></div></div>
+          <div class="footer__contact-item"><div class="footer__contact-icon">✉️</div><div class="footer__contact-text"><a href="mailto:cs@inciserotomatic.com">cs@inciserotomatic.com</a></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copyright">© 2024 Incise Rotomatic LLP. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+        <a href="terms-of-use.html" class="footer__legal-link">Terms of Use</a>
+        <span class="footer__gst">GST: 33AAZFI6137B1ZZ</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function requestDoc(docName) {
+  // Pre-fill the RFQ form with document request
+  const msg = `I'd like to request the following document: ${docName}`;
+  window.location.href = `contact.html#rfq?doc=${encodeURIComponent(docName)}`;
+}
+</script>
+</body>
+</html>
+
+
