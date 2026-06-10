@@ -43,6 +43,67 @@
   pointer-events: none;
 }
 
+.hero__accent-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__accent-shape--circle-orange {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 130, 32, 0.12) 0%, transparent 70%);
+  top: -5%;
+  right: 15%;
+}
+
+.hero__accent-shape--circle-purple {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(138, 43, 129, 0.1) 0%, transparent 70%);
+  bottom: 10%;
+  left: 5%;
+}
+
+.hero__accent-shape--diamond-blue {
+  width: 120px;
+  height: 120px;
+  border: 1.5px solid rgba(65, 164, 251, 0.15);
+  transform: rotate(45deg);
+  top: 20%;
+  left: 60%;
+}
+
+.hero__accent-shape--plus-orange {
+  width: 40px;
+  height: 40px;
+  bottom: 25%;
+  right: 8%;
+}
+
+.hero__accent-shape--plus-orange::before,
+.hero__accent-shape--plus-orange::after {
+  content: '';
+  position: absolute;
+  background: rgba(245, 130, 32, 0.15);
+}
+
+.hero__accent-shape--plus-orange::before {
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero__accent-shape--plus-orange::after {
+  width: 2px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .hero__accent-line {
   position: absolute;
   right: 0;
@@ -239,18 +300,18 @@
 }
 .hero__visual-ring:nth-child(1) {
   inset: 0;
-  border-color: rgba(30,28,206,0.12);
+  border-color: rgba(245, 130, 32, 0.25);
   animation-duration: 30s;
 }
 .hero__visual-ring:nth-child(2) {
   inset: 40px;
-  border-color: rgba(8,178,25,0.1);
+  border-color: rgba(138, 43, 129, 0.2);
   animation-direction: reverse;
   animation-duration: 20s;
 }
 .hero__visual-ring:nth-child(3) {
   inset: 80px;
-  border-color: rgba(30,28,206,0.08);
+  border-color: rgba(65, 164, 251, 0.18);
   animation-duration: 15s;
 }
 
@@ -315,19 +376,21 @@
 .orbit-item .emoji { font-size: 20px; }
 .orbit-item .label { font-weight: var(--fw-semibold); color: var(--clr-text-primary); }
 
-.orbit-item--top    { top: 0; left: 50%; transform: translateX(-50%); }
-.orbit-item--right  { right: -20px; top: 50%; transform: translateY(-50%); }
-.orbit-item--bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
-.orbit-item--left   { left: -20px; top: 50%; transform: translateY(-50%); }
+.orbit-item--1 { top: 0; left: 50%; transform: translateX(-50%); }
+.orbit-item--2 { top: 35%; right: -20px; transform: translateY(-50%); }
+.orbit-item--3 { bottom: 5%; right: 10%; transform: translate(50%, 50%); }
+.orbit-item--4 { bottom: 5%; left: 10%; transform: translate(-50%, 50%); }
+.orbit-item--5 { top: 35%; left: -20px; transform: translateY(-50%); }
 
 @keyframes float {
   0%, 100% { transform: translateY(0) translateX(var(--tx, 0)); }
   50% { transform: translateY(-10px) translateX(var(--tx, 0)); }
 }
-.orbit-item--top    { --tx: -50%; }
-.orbit-item--bottom { --tx: -50%; }
-.orbit-item--right  { --tx: 0; animation-name: float-x; }
-.orbit-item--left   { --tx: 0; animation-name: float-x; }
+.orbit-item--1 { --tx: -50%; }
+.orbit-item--3 { --tx: 50%; }
+.orbit-item--4 { --tx: -50%; }
+.orbit-item--2 { --tx: 0; animation-name: float-x; }
+.orbit-item--5 { --tx: 0; animation-name: float-x; }
 
 @keyframes float-x {
   0%, 100% { transform: translateY(-50%) translateX(0); }
