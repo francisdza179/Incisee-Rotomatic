@@ -1,5 +1,5 @@
 /* ============================================================
-   INCISE ROTOMATIC — RFQ Form Handler
+   Incisee ROTOMATIC — RFQ Form Handler
    ============================================================ */
 
 'use strict';
@@ -156,7 +156,7 @@
 
       const subject = `RFQ from ${company} — ${product}`;
       const body = [
-        `New RFQ from Incise Rotomatic Website`,
+        `New RFQ from Incisee Rotomatic Website`,
         `==========================================`,
         `Name: ${name}`,
         `Company: ${company}`,

@@ -1,5 +1,5 @@
 /* ============================================================
-   INCISE ROTOMATIC — Global JavaScript Engine
+   Incisee ROTOMATIC — Global JavaScript Engine
    ============================================================ */
 
 'use strict';

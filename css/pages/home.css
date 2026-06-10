@@ -1,5 +1,5 @@
 /* ============================================================
-   INCISE ROTOMATIC — Homepage Styles
+   Incisee ROTOMATIC — Homepage Styles
    ============================================================ */
 
 /* ── Hero Section ─────────────────────────────────────────── */
@@ -10,6 +10,20 @@
   align-items: center;
   overflow: hidden;
   background: var(--clr-bg-base);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(30,28,206,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30,28,206,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, transparent 35%, black 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, transparent 35%, black 75%);
 }
 
 .hero__canvas {
@@ -729,12 +743,15 @@
 
 .industries-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: var(--sp-6);
   margin-top: var(--sp-12);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .industries-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
   .industries-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 500px) {
@@ -1010,6 +1027,18 @@
 .client-logo:hover {
   border-color: var(--clr-border-glow);
   background: var(--clr-bg-card);
+}
+
+.client-logo img {
+  max-height: 40px;
+  max-width: 140px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity var(--transition-base);
+}
+
+.client-logo:hover img {
+  opacity: 1;
 }
 
 .client-logo span {

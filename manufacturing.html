@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Manufacturing capabilities of Incise Rotomatic — rotary die-cutting machines, VMC, CNC lathe, IATF quality process, and Chennai facility.">
-  <title>Manufacturing Capabilities | Incise Rotomatic LLP</title>
+  <meta name="description" content="Manufacturing capabilities of Incisee Rotomatic — rotary die-cutting machines, VMC, CNC lathe, IATF quality process, and Chennai facility.">
+  <title>Manufacturing Capabilities | Incisee Rotomatic LLP</title>
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/components/navbar.css">
   <link rel="stylesheet" href="css/components/footer.css">
@@ -12,13 +12,31 @@
     /* Manufacturing page styles */
     .mfg-section { padding: var(--sp-24) 0; background: var(--clr-bg-base); }
     .equipment-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-6); margin-top:var(--sp-12); }
-    @media(max-width:768px){ .equipment-grid{grid-template-columns:1fr;} }
-    .equipment-card { padding:var(--sp-7) var(--sp-6); background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-xl); transition:all var(--transition-slow); text-align:center; }
+    @media(max-width:900px){ .equipment-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:640px){ .equipment-grid{grid-template-columns:1fr;} }
+    .equipment-card { padding:var(--sp-7) var(--sp-6); background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-xl); transition:all var(--transition-slow); text-align:left; }
     .equipment-card:hover { border-color:var(--clr-border-glow); box-shadow:var(--shadow-glow-blue); transform:translateY(-4px); }
-    .equipment-card__icon { font-size:48px; margin-bottom:var(--sp-4); }
-    .equipment-card__name { font-family:var(--font-display); font-size:var(--fs-xl); font-weight:var(--fw-bold); color:var(--clr-text-primary); margin-bottom:var(--sp-2); }
-    .equipment-card__count { font-size:var(--fs-sm); color:var(--clr-accent-green); font-weight:var(--fw-semibold); margin-bottom:var(--sp-3); }
-    .equipment-card__desc { font-size:var(--fs-sm); color:var(--clr-text-muted); line-height:var(--lh-relaxed); max-width:none; }
+    .equipment-card__icon { font-size:40px; margin-bottom:var(--sp-4); }
+    .equipment-card__name { font-family:var(--font-display); font-size:var(--fs-lg); font-weight:var(--fw-bold); color:var(--clr-text-primary); margin-bottom:var(--sp-1); }
+    .equipment-card__count { font-size:var(--fs-xs); color:var(--clr-accent-green); font-weight:var(--fw-semibold); margin-bottom:var(--sp-3); }
+    .equipment-card__desc { font-size:var(--fs-xs); color:var(--clr-text-muted); line-height:var(--lh-relaxed); max-width:none; }
+    
+    .capacity-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-6); margin-top: var(--sp-8); }
+    @media(max-width: 900px) { .capacity-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(max-width: 480px) { .capacity-grid { grid-template-columns: 1fr; } }
+    .capacity-card { padding: var(--sp-6); background: var(--clr-bg-card); border: 1px solid var(--clr-border); border-radius: var(--radius-lg); text-align: center; }
+    .capacity-card__val { font-family: var(--font-display); font-size: var(--fs-3xl); font-weight: var(--fw-black); color: var(--clr-accent-blue); margin-bottom: var(--sp-1); }
+    .capacity-card__lbl { font-size: var(--fs-xs); color: var(--clr-text-muted); text-transform: uppercase; font-weight: var(--fw-bold); }
+    .capacity-card__sub { font-size: var(--fs-xs); color: var(--clr-accent-green); margin-top: var(--sp-1); }
+
+    .cleanroom-section { padding: var(--sp-24) 0; background: var(--clr-bg-surface); border-top: 1px solid var(--clr-border); border-bottom: 1px solid var(--clr-border); }
+    .cleanroom-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--sp-12); align-items: center; }
+    @media(max-width: 900px) { .cleanroom-grid { grid-template-columns: 1fr; } }
+    .cleanroom-specs { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-4); }
+    .cleanroom-spec-item { padding: var(--sp-4); background: var(--clr-bg-card); border: 1px solid var(--clr-border); border-radius: var(--radius-md); }
+    .cleanroom-spec-item__lbl { font-size: var(--fs-xs); color: var(--clr-text-muted); margin-bottom: 2px; }
+    .cleanroom-spec-item__val { font-weight: var(--fw-bold); color: var(--clr-text-primary); font-size: var(--fs-sm); }
+
     .process-flow { display:flex; gap:0; margin-top:var(--sp-12); position:relative; overflow-x:auto; }
     .process-step { flex:1; min-width:160px; text-align:center; padding:var(--sp-6) var(--sp-4); position:relative; }
     .process-step:not(:last-child)::after { content:'→'; position:absolute; right:-12px; top:50%; transform:translateY(-50%); font-size:var(--fs-xl); color:var(--clr-accent-blue); z-index:1; }
@@ -26,6 +44,7 @@
     .process-step__icon { font-size:32px; margin-bottom:var(--sp-3); }
     .process-step__title { font-size:var(--fs-sm); font-weight:var(--fw-bold); color:var(--clr-text-primary); margin-bottom:var(--sp-2); }
     .process-step__desc { font-size:var(--fs-xs); color:var(--clr-text-muted); line-height:var(--lh-relaxed); max-width:20ch; margin:0 auto; }
+    
     .qa-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--sp-6); margin-top:var(--sp-8); }
     @media(max-width:640px){ .qa-grid{grid-template-columns:1fr;} }
     .qa-item { display:flex; gap:var(--sp-4); align-items:flex-start; padding:var(--sp-5); background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-xl); }
@@ -34,14 +53,14 @@
     .qa-item__desc { font-size:var(--fs-sm); color:var(--clr-text-muted); line-height:var(--lh-relaxed); max-width:none; }
     .bg-surface { background:var(--clr-bg-surface); }
   </style>
-<link rel="icon" type="image/png" href="images/brand/Incise Rotomatic Favicon.png">
+<link rel="icon" type="image/png" href="images/Actual%20images/Incisee%20Rotomatic%20Favicon%20transparent.png">
 </head>
 <body>
 <header class="navbar scrolled" id="navbar" role="banner">
   <div class="container">
     <div class="navbar__inner">
       <a href="index.html" class="navbar__logo">
-                <img src="images/brand/Incise Rotomatic Logo Horizontal.png" alt="Incise Rotomatic Logo">
+                <img src="images/brand/Incisee Rotomatic Logo Horizontal.png" alt="Incisee Rotomatic Logo">
       </a>
       <nav class="navbar__nav" role="navigation" aria-label="Primary navigation">
         <a href="index.html" class="navbar__link">Home</a>
@@ -148,31 +167,78 @@
   </div>
 </section>
 
+<!-- CAPACITY STRIP -->
+<section class="section-pad bg-surface" style="padding: var(--sp-12) 0; border-bottom: 1px solid var(--clr-border);" aria-label="Manufacturing Capacity">
+  <div class="container">
+    <div class="capacity-grid">
+      <div class="capacity-card" data-reveal>
+        <div class="capacity-card__val">35M</div>
+        <div class="capacity-card__lbl">Installed Capacity</div>
+        <div class="capacity-card__sub">Die-cut parts / month</div>
+      </div>
+      <div class="capacity-card" data-reveal data-reveal-delay="100">
+        <div class="capacity-card__val">1,200 m²</div>
+        <div class="capacity-card__lbl">Plant Area</div>
+        <div class="capacity-card__sub">Company-owned facility</div>
+      </div>
+      <div class="capacity-card" data-reveal data-reveal-delay="200">
+        <div class="capacity-card__val">3 Shifts</div>
+        <div class="capacity-card__lbl">Shift Capability</div>
+        <div class="capacity-card__sub">Rapid production scale-up</div>
+      </div>
+      <div class="capacity-card" data-reveal data-reveal-delay="300">
+        <div class="capacity-card__val">22-24M</div>
+        <div class="capacity-card__lbl">Available Capacity</div>
+        <div class="capacity-card__sub">Immediate OEM allocation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- EQUIPMENT -->
 <section class="mfg-section" aria-label="Manufacturing equipment">
   <div class="container">
     <div data-reveal style="text-align:center;max-width:50ch;margin:0 auto var(--sp-4);">
       <span class="section-label" style="justify-content:center;">Our Equipment</span>
       <h2 class="section-title">World-Class <span>Machinery</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">High-precision tooling, slitting, and die-cutting systems deployed on our shop floor.</p>
     </div>
     <div class="equipment-grid">
       <div class="equipment-card" data-reveal>
         <div class="equipment-card__icon">⚙️</div>
-        <div class="equipment-card__name">Rotary Die-Cutting</div>
-        <div class="equipment-card__count">2 Machines</div>
-        <p class="equipment-card__desc">High-speed rotary die-cutting machines capable of processing rolls of film, foam, membrane, and tape materials to precise dimensions with clean, consistent cuts at production volumes.</p>
+        <div class="equipment-card__name">10-Station Rotary Die Cutter</div>
+        <div class="equipment-card__count">High-Precision</div>
+        <p class="equipment-card__desc">Designed for multi-layer precision converting of foam gaskets, adhesives, and membranes. Web width 300mm, accuracy ±0.05mm, speed 50m/min.</p>
+      </div>
+      <div class="equipment-card" data-reveal data-reveal-delay="50">
+        <div class="equipment-card__icon">⚙️</div>
+        <div class="equipment-card__name">7-Station Rotary (HOACO)</div>
+        <div class="equipment-card__count">1 Machine</div>
+        <p class="equipment-card__desc">Advanced multi-layer rotary converting for medical, automotive, and electronic components. Web width 300mm, speed 50m/min.</p>
       </div>
       <div class="equipment-card" data-reveal data-reveal-delay="100">
-        <div class="equipment-card__icon">🔩</div>
-        <div class="equipment-card__name">VMC — Vertical Machining Centre</div>
-        <div class="equipment-card__count">In-house</div>
-        <p class="equipment-card__desc">CNC vertical machining centre for precision die tooling fabrication and maintenance, custom fixture manufacturing, and prototype part development.</p>
+        <div class="equipment-card__icon">⚙️</div>
+        <div class="equipment-card__name">Multi-Station Rotary (IDENT UK)</div>
+        <div class="equipment-card__count">4 Machines</div>
+        <p class="equipment-card__desc">High-volume precision converters with 600mm unwind, 175mm web width, operating at speeds up to 75m/min.</p>
+      </div>
+      <div class="equipment-card" data-reveal data-reveal-delay="150">
+        <div class="equipment-card__icon">✂️</div>
+        <div class="equipment-card__name">High-Accuracy Slitter (HANYUAN)</div>
+        <div class="equipment-card__count">1 Machine</div>
+        <p class="equipment-card__desc">High-precision log roll slitter for masking, double-sided, and foam tapes. Slitting accuracy ±0.03mm, min slit width 0.5mm.</p>
       </div>
       <div class="equipment-card" data-reveal data-reveal-delay="200">
-        <div class="equipment-card__icon">🌀</div>
-        <div class="equipment-card__name">CNC Lathe</div>
-        <div class="equipment-card__count">In-house</div>
-        <p class="equipment-card__desc">CNC turning centre for cylindrical component machining, die roll fabrication, and precision tooling manufacture — supporting our die-cutting operations with in-house tool maintenance.</p>
+        <div class="equipment-card__icon">⚡</div>
+        <div class="equipment-card__name">CNC XY Digital Cutting Machine</div>
+        <div class="equipment-card__count">Oscillating Knife Type</div>
+        <p class="equipment-card__desc">Designed for tool-less digital cutting of gaskets, PET/PE films, and rubber sheets. Working area 1.3m x 1.6m, accuracy ±0.05mm.</p>
+      </div>
+      <div class="equipment-card" data-reveal data-reveal-delay="250">
+        <div class="equipment-card__icon">🔥</div>
+        <div class="equipment-card__name">CO₂ Laser Cutters (GCC &amp; VIZZAC)</div>
+        <div class="equipment-card__count">3 Machines</div>
+        <p class="equipment-card__desc">Digital laser cutting for tool-less prototyping and gaskets. Power up to 100W, positioning accuracy ±0.025mm.</p>
       </div>
     </div>
   </div>
@@ -220,6 +286,50 @@
   </div>
 </section>
 
+<!-- CLEAN ROOM SECTION -->
+<section class="cleanroom-section" aria-label="Class 10,000 Clean Room">
+  <div class="container">
+    <div class="cleanroom-grid">
+      <div data-reveal>
+        <span class="section-label">Contamination Control</span>
+        <h2 class="section-title">Class 10,000 <span>Clean Room Facility</span></h2>
+        <p class="section-subtitle" style="margin-bottom: var(--sp-6);">
+          Our manufacturing shop floor features an IATF-compliant, ISO Class 7 (Class 10,000) clean room environment designed specifically for healthcare assemblies, skin-contact adhesives, wearable patch components, and sensitive ePTFE electronics venting.
+        </p>
+        <p style="font-size: var(--fs-sm); color: var(--clr-text-muted); line-height: var(--lh-relaxed);">
+          Housing two multi-station rotary die-cutting systems (including our IDENT UK and HOACO lines), this facility ensures particle-free, hygienic, and regulatory-compliant manufacturing for global OEMs.
+        </p>
+      </div>
+      <div class="cleanroom-specs" data-reveal data-reveal-delay="100">
+        <div class="cleanroom-spec-item">
+          <div class="cleanroom-spec-item__lbl">Cleanliness Class</div>
+          <div class="cleanroom-spec-item__val">Class 10,000 (ISO 7)</div>
+        </div>
+        <div class="cleanroom-spec-item">
+          <div class="cleanroom-spec-item__lbl">Air Filtration</div>
+          <div class="cleanroom-spec-item__val">HEPA (99.97% @ 0.3 µm)</div>
+        </div>
+        <div class="cleanroom-spec-item">
+          <div class="cleanroom-spec-item__lbl">Air Change Rate</div>
+          <div class="cleanroom-spec-item__val">60 – 90 changes / hr</div>
+        </div>
+        <div class="cleanroom-spec-item">
+          <div class="cleanroom-spec-item__lbl">Humidity Control</div>
+          <div class="cleanroom-spec-item__val">40% – 60% RH</div>
+        </div>
+        <div class="cleanroom-spec-item">
+          <div class="cleanroom-spec-item__lbl">Room Pressure</div>
+          <div class="cleanroom-spec-item__val">Positive Pressure</div>
+        </div>
+        <div class="cleanroom-spec-item">
+          <div class="cleanroom-spec-item__lbl">Flooring Type</div>
+          <div class="cleanroom-spec-item__val">Anti-static Epoxy &amp; LED lighting</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- QUALITY ASSURANCE -->
 <section class="mfg-section" aria-label="Quality assurance">
   <div class="container">
@@ -261,6 +371,37 @@
   </div>
 </section>
 
+<!-- TESTING FACILITY -->
+<section class="mfg-section" style="border-top: 1px solid var(--clr-border); padding-top: var(--sp-24);" aria-label="Testing facility">
+  <div class="container">
+    <div data-reveal style="text-align:center;max-width:55ch;margin:0 auto var(--sp-4);">
+      <span class="section-label" style="justify-content:center;">State-of-the-Art QA</span>
+      <h2 class="section-title">Testing &amp; Validation <span>Facility</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">Equipped with high-precision instruments to guarantee physical compliance and dimensional accuracy of membranes and die-cuts.</p>
+    </div>
+    <div class="equipment-grid" style="margin-top:var(--sp-8);">
+      <div class="equipment-card" data-reveal>
+        <div class="equipment-card__icon">💧</div>
+        <div class="equipment-card__name">Water Permeability Tester</div>
+        <div class="equipment-card__count">Hydrostatic Pressure</div>
+        <p class="equipment-card__desc">Digital control apparatus testing waterproof and breathable limits in a 0–100 kPa pressure range, validating ePTFE membrane performance.</p>
+      </div>
+      <div class="equipment-card" data-reveal data-reveal-delay="100">
+        <div class="equipment-card__icon">💨</div>
+        <div class="equipment-card__name">Air Permeability &amp; UTM</div>
+        <div class="equipment-card__count">Flowrate &amp; Tensile Testing</div>
+        <p class="equipment-card__desc">Air Permeability Tester (1–10,000 mm/s flowrate) and Universal Tensile Testing Machine (UTM) for evaluating membrane strength, peel, and bonding adhesion.</p>
+      </div>
+      <div class="equipment-card" data-reveal data-reveal-delay="200">
+        <div class="equipment-card__icon">📐</div>
+        <div class="equipment-card__name">VMM (Visual Measuring Machine)</div>
+        <div class="equipment-card__count">CNC Inspection</div>
+        <p class="equipment-card__desc">High-resolution camera system paired with a CNC XY table for sub-micron level dimensional checks and contour verification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-banner" aria-label="Manufacturing CTA">
   <div class="container">
@@ -280,7 +421,7 @@
     <div class="footer__main">
       <div class="footer__brand">
         <a href="index.html" class="footer__logo">
-                    <img src="images/brand/Incise Rotomatic Logo Horizontal.png" alt="Incise Rotomatic Logo" style="width: 191px; height: auto;">
+                    <img src="images/brand/Incisee Rotomatic Logo Horizontal.png" alt="Incisee Rotomatic Logo" style="width: 191px; height: auto;">
         </a>
         <p class="footer__tagline">Precision die-cutting. IATF 16949:2016 certified, Chennai.</p>
         <div class="footer__cert"><span>🏆</span> IATF 16949:2016 Certified</div>
@@ -312,7 +453,7 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <div class="footer__copyright">© 2024 Incise Rotomatic LLP. All rights reserved.</div>
+      <div class="footer__copyright">© 2024 Incisee Rotomatic LLP. All rights reserved.</div>
       <div class="footer__legal">
         <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
         <a href="terms-of-use.html" class="footer__legal-link">Terms of Use</a>

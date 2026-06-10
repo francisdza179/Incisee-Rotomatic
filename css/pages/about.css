@@ -1,5 +1,5 @@
 /* ============================================================
-   INCISE ROTOMATIC — About Page Styles
+   Incisee ROTOMATIC — About Page Styles
    ============================================================ */
 
 /* ── Company Overview ─────────────────────────────────────── */
@@ -279,7 +279,7 @@
 }
 
 
-/* ── Incise Group ─────────────────────────────────────────── */
+/* ── Incisee Group ─────────────────────────────────────────── */
 .group-section {
   background: var(--clr-bg-surface);
   padding: var(--sp-20) 0;
@@ -297,7 +297,7 @@
 }
 
 .group-card {
-  padding: var(--sp-7) var(--sp-6);
+  padding: var(--sp-10) var(--sp-8);
   background: var(--clr-bg-card);
   border: 1px solid var(--clr-border);
   border-radius: var(--radius-xl);
