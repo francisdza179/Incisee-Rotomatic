@@ -89,7 +89,7 @@ function animateCounter(el, target, suffix = '', duration = 2000) {
     const eased = 1 - Math.pow(1 - progress, 3);
     const current = isDecimal
       ? (eased * target).toFixed(1)
-      : Math.floor(eased * target);
+      : progress < 1 ? Math.round(eased * target) : target;
     el.textContent = current + suffix;
     if (progress < 1) requestAnimationFrame(step);
   };
