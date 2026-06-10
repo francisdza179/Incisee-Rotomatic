@@ -52,6 +52,39 @@
     .qa-item__title { font-size:var(--fs-base); font-weight:var(--fw-bold); color:var(--clr-text-primary); margin-bottom:var(--sp-1); }
     .qa-item__desc { font-size:var(--fs-sm); color:var(--clr-text-muted); line-height:var(--lh-relaxed); max-width:none; }
     .bg-surface { background:var(--clr-bg-surface); }
+
+    /* Split hero layout styles */
+    .page-hero__layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--sp-12); align-items: center; }
+    @media(max-width:900px){ .page-hero__layout { grid-template-columns: 1fr; gap: var(--sp-8); } }
+    .page-hero__image-wrapper { display: flex; justify-content: center; align-items: center; }
+    .page-hero__img { width: 100%; max-height: 380px; object-fit: cover; border-radius: var(--radius-xl); border: 1px solid var(--clr-border); box-shadow: var(--shadow-glow-blue); transition: transform var(--transition-slow); }
+    .page-hero__img:hover { transform: scale(1.02); }
+
+    /* Featured capabilities grid styles */
+    .featured-capabilities-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-8); margin-bottom: var(--sp-12); }
+    @media(max-width:768px){ .featured-capabilities-grid { grid-template-columns: 1fr; gap: var(--sp-6); } }
+    .featured-capability-card { background: var(--clr-bg-card); border: 1px solid var(--clr-border); border-radius: var(--radius-xl); overflow: hidden; transition: all var(--transition-slow); }
+    .featured-capability-card:hover { border-color: var(--clr-border-glow); box-shadow: var(--shadow-glow-blue); transform: translateY(-4px); }
+    .featured-capability-card__img-container { height: 260px; overflow: hidden; position: relative; }
+    .featured-capability-card__img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-slow); }
+    .featured-capability-card:hover .featured-capability-card__img-container img { transform: scale(1.05); }
+    .featured-capability-card__body { padding: var(--sp-6); }
+    .featured-capability-card__title { font-family: var(--font-display); font-size: var(--fs-lg); font-weight: var(--fw-bold); color: var(--clr-text-primary); margin: var(--sp-3) 0 var(--sp-2); }
+    .featured-capability-card__desc { font-size: var(--fs-sm); color: var(--clr-text-muted); line-height: var(--lh-relaxed); }
+
+    /* Cleanroom image styles */
+    .cleanroom-image-wrapper { height: 100%; min-height: 400px; display: flex; }
+    .cleanroom-img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl); border: 1px solid var(--clr-border); box-shadow: var(--shadow-glow-blue); transition: transform var(--transition-slow); }
+    .cleanroom-img:hover { transform: scale(1.02); }
+    @media(max-width:900px){ .cleanroom-image-wrapper { min-height: 300px; } }
+
+    /* Quality system section styles */
+    .qa-section-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--sp-12); align-items: center; }
+    @media(max-width:990px){ .qa-section-layout { grid-template-columns: 1fr; gap: var(--sp-8); } }
+    .qa-image-wrapper { height: 100%; min-height: 450px; display: flex; }
+    .qa-img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl); border: 1px solid var(--clr-border); box-shadow: var(--shadow-glow-blue); transition: transform var(--transition-slow); }
+    .qa-img:hover { transform: scale(1.02); }
+    @media(max-width:990px){ .qa-image-wrapper { min-height: 300px; } }
   </style>
 <link rel="icon" type="image/png" href="images/Actual%20images/Incisee%20Rotomatic%20Favicon%20transparent.png">
 </head>
@@ -165,12 +198,21 @@
   <div class="blueprint-circle" style="top:10%;right:3%;width:80px;height:80px;" aria-hidden="true"></div>
   <div class="blueprint-circle" style="bottom:15%;left:5%;width:60px;height:60px;" aria-hidden="true"></div>
   <div class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Home</a><span class="sep">›</span><span class="current">Manufacturing</span>
-    </nav>
-    <span class="section-label page-hero-label">Built for Precision</span>
-    <h1 class="page-hero-title">Manufacturing <span class="gradient-text">Capability</span></h1>
-    <p class="page-hero-subtitle">In-house rotary die-cutting, machining, and turning — all under one roof, all governed by IATF 16949:2016 quality systems in our Chennai facility.</p>
+    <div class="page-hero__layout">
+      <div class="page-hero__content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span class="sep">›</span><span class="current">Manufacturing</span>
+        </nav>
+        <span class="section-label page-hero-label">Built for Precision</span>
+        <h1 class="page-hero-title">Manufacturing <span class="gradient-text">Capability</span></h1>
+        <p class="page-hero-subtitle">In-house rotary die-cutting, machining, and turning — all under one roof, all governed by IATF 16949:2016 quality systems in our Chennai facility.</p>
+      </div>
+      <div class="page-hero__image-wrapper" data-reveal="right">
+        <div class="die-cut-border" style="display: inline-block; border-radius: var(--radius-xl); overflow: hidden;">
+          <img src="images/Actual%20images/Machines,%20Facility,%20and%20People/optimized/Modern%20industrial%20manufacturing%20facility%20featuring%20Gawan.jpeg" alt="Modern industrial manufacturing facility featuring Gawan" class="page-hero__img">
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -210,6 +252,31 @@
       <h2 class="section-title">World-Class <span>Machinery</span></h2>
       <p class="section-subtitle" style="margin:0 auto;">High-precision tooling, slitting, and die-cutting systems deployed on our shop floor.</p>
     </div>
+
+    <!-- FEATURED CAPABILITIES SHOWCASE -->
+    <div class="featured-capabilities-grid" data-reveal>
+      <div class="featured-capability-card">
+        <div class="featured-capability-card__img-container">
+          <img src="images/Actual%20images/Machines,%20Facility,%20and%20People/optimized/Multi-station%20rotary%20die-cutting%20machine.jpeg" alt="Multi-station rotary die-cutting machine">
+        </div>
+        <div class="featured-capability-card__body">
+          <span class="badge badge-blue">Die-Cutting</span>
+          <h3 class="featured-capability-card__title">Multi-Station Rotary Die-Cutting</h3>
+          <p class="featured-capability-card__desc">Our flagship high-speed converting lines, including IDENT UK and HOACO systems, produce complex multi-layered parts with tolerances up to ±0.05mm.</p>
+        </div>
+      </div>
+      <div class="featured-capability-card">
+        <div class="featured-capability-card__img-container">
+          <img src="images/Actual%20images/Machines,%20Facility,%20and%20People/optimized/Gawan-FJ%20slitting%20machine.jpeg" alt="Gawan-FJ slitting machine">
+        </div>
+        <div class="featured-capability-card__body">
+          <span class="badge badge-green">Slitting</span>
+          <h3 class="featured-capability-card__title">Precision Material Slitting</h3>
+          <p class="featured-capability-card__desc">High-precision slitting capabilities featuring the GAWAN OD550 log roll slitter and auto rewinding systems, ensuring precise material widths for converting.</p>
+        </div>
+      </div>
+    </div>
+
     <div class="equipment-grid">
       <div class="equipment-card" data-reveal>
         <div class="equipment-card__icon">⚙️</div>
@@ -339,42 +406,48 @@
         <p class="section-subtitle" style="margin-bottom: var(--sp-6);">
           Our manufacturing shop floor features an IATF-compliant, ISO Class 7 (Class 10,000) clean room environment designed specifically for healthcare assemblies, skin-contact adhesives, wearable patch components, and sensitive ePTFE electronics venting.
         </p>
-        <p style="font-size: var(--fs-sm); color: var(--clr-text-muted); line-height: var(--lh-relaxed);">
+        <p style="font-size: var(--fs-sm); color: var(--clr-text-muted); line-height: var(--lh-relaxed); margin-bottom: var(--sp-8);">
           Housing two multi-station rotary die-cutting systems (including our IDENT UK and HOACO lines), this facility ensures particle-free, hygienic, and regulatory-compliant manufacturing for global OEMs.
         </p>
+        
+        <div class="cleanroom-specs">
+          <div class="cleanroom-spec-item">
+            <div class="cleanroom-spec-item__lbl">Cleanliness Class</div>
+            <div class="cleanroom-spec-item__val">Class 10,000 (ISO 7)</div>
+          </div>
+          <div class="cleanroom-spec-item">
+            <div class="cleanroom-spec-item__lbl">Air Filtration</div>
+            <div class="cleanroom-spec-item__val">HEPA (99.97% @ 0.3 µm)</div>
+          </div>
+          <div class="cleanroom-spec-item">
+            <div class="cleanroom-spec-item__lbl">Air Change Rate</div>
+            <div class="cleanroom-spec-item__val">60 – 90 changes / hr</div>
+          </div>
+          <div class="cleanroom-spec-item">
+            <div class="cleanroom-spec-item__lbl">Temperature Control</div>
+            <div class="cleanroom-spec-item__val">22 ± 2 °C</div>
+          </div>
+          <div class="cleanroom-spec-item">
+            <div class="cleanroom-spec-item__lbl">Humidity Control</div>
+            <div class="cleanroom-spec-item__val">40% – 60% RH</div>
+          </div>
+          <div class="cleanroom-spec-item">
+            <div class="cleanroom-spec-item__lbl">Room Pressure</div>
+            <div class="cleanroom-spec-item__val">Positive Pressure</div>
+          </div>
+          <div class="cleanroom-spec-item">
+            <div class="cleanroom-spec-item__lbl">Flooring Type</div>
+            <div class="cleanroom-spec-item__val">Anti-static Epoxy</div>
+          </div>
+          <div class="cleanroom-spec-item">
+            <div class="cleanroom-spec-item__lbl">Gowning Protocol</div>
+            <div class="cleanroom-spec-item__val">Cap, mask, gloves, ESD shoes</div>
+          </div>
+        </div>
       </div>
-      <div class="cleanroom-specs" data-reveal data-reveal-delay="100">
-        <div class="cleanroom-spec-item">
-          <div class="cleanroom-spec-item__lbl">Cleanliness Class</div>
-          <div class="cleanroom-spec-item__val">Class 10,000 (ISO 7)</div>
-        </div>
-        <div class="cleanroom-spec-item">
-          <div class="cleanroom-spec-item__lbl">Air Filtration</div>
-          <div class="cleanroom-spec-item__val">HEPA (99.97% @ 0.3 µm)</div>
-        </div>
-        <div class="cleanroom-spec-item">
-          <div class="cleanroom-spec-item__lbl">Air Change Rate</div>
-          <div class="cleanroom-spec-item__val">60 – 90 changes / hr</div>
-        </div>
-        <div class="cleanroom-spec-item">
-          <div class="cleanroom-spec-item__lbl">Temperature Control</div>
-          <div class="cleanroom-spec-item__val">22 ± 2 °C</div>
-        </div>
-        <div class="cleanroom-spec-item">
-          <div class="cleanroom-spec-item__lbl">Humidity Control</div>
-          <div class="cleanroom-spec-item__val">40% – 60% RH</div>
-        </div>
-        <div class="cleanroom-spec-item">
-          <div class="cleanroom-spec-item__lbl">Room Pressure</div>
-          <div class="cleanroom-spec-item__val">Positive Pressure</div>
-        </div>
-        <div class="cleanroom-spec-item">
-          <div class="cleanroom-spec-item__lbl">Flooring Type</div>
-          <div class="cleanroom-spec-item__val">Anti-static Epoxy</div>
-        </div>
-        <div class="cleanroom-spec-item">
-          <div class="cleanroom-spec-item__lbl">Gowning Protocol</div>
-          <div class="cleanroom-spec-item__val">Cap, mask, gloves, ESD shoes</div>
+      <div class="cleanroom-image-wrapper" data-reveal data-reveal-delay="100">
+        <div class="die-cut-border" style="display: block; border-radius: var(--radius-xl); overflow: hidden; height: 100%; width: 100%;">
+          <img src="images/Actual%20images/Machines,%20Facility,%20and%20People/optimized/Industrial%20workspace%20with%20green%20epoxy%20flooring.jpeg" alt="Industrial workspace with green epoxy flooring" class="cleanroom-img">
         </div>
       </div>
     </div>
@@ -384,38 +457,45 @@
 <!-- QUALITY ASSURANCE -->
 <section class="mfg-section" aria-label="Quality assurance">
   <div class="container">
-    <div data-reveal style="text-align:center;max-width:55ch;margin:0 auto var(--sp-4);">
-      <span class="section-label" style="justify-content:center;">Quality First</span>
-      <h2 class="section-title">IATF 16949:2016 <span>Quality System</span></h2>
-      <p class="section-subtitle" style="margin:0 auto;">Every process, every component, every delivery is governed by our IATF-certified quality management system — ensuring zero-defect supply.</p>
-    </div>
-    <div class="qa-grid" data-reveal>
-      <div class="qa-item">
-        <div class="qa-item__icon">🏆</div>
-        <div>
-          <div class="qa-item__title">IATF 16949:2016 Certification</div>
-          <p class="qa-item__desc">The global automotive quality standard — applied to all manufacturing operations, not just automotive components.</p>
+    <div class="qa-section-layout">
+      <div class="qa-content" data-reveal>
+        <span class="section-label">Quality First</span>
+        <h2 class="section-title">IATF 16949:2016 <span>Quality System</span></h2>
+        <p class="section-subtitle" style="margin-bottom: var(--sp-8);">Every process, every component, every delivery is governed by our IATF-certified quality management system — ensuring zero-defect supply.</p>
+        <div class="qa-grid">
+          <div class="qa-item">
+            <div class="qa-item__icon">🏆</div>
+            <div>
+              <div class="qa-item__title">IATF 16949:2016 Certification</div>
+              <p class="qa-item__desc">The global automotive quality standard — applied to all manufacturing operations, not just automotive components.</p>
+            </div>
+          </div>
+          <div class="qa-item">
+            <div class="qa-item__icon">🔍</div>
+            <div>
+              <div class="qa-item__title">100% Visual Inspection</div>
+              <p class="qa-item__desc">Every part is visually inspected before dispatch. Dimensional checks performed against customer drawings using calibrated gauging.</p>
+            </div>
+          </div>
+          <div class="qa-item">
+            <div class="qa-item__icon">📋</div>
+            <div>
+              <div class="qa-item__title">Full Traceability</div>
+              <p class="qa-item__desc">Material lot traceability from incoming raw material through production and delivery — essential for automotive and medical supply chains.</p>
+            </div>
+          </div>
+          <div class="qa-item">
+            <div class="qa-item__icon">📉</div>
+            <div>
+              <div class="qa-item__title">Defect Prevention (FMEA)</div>
+              <p class="qa-item__desc">Failure Mode and Effects Analysis conducted for all new products to identify and eliminate potential defect sources before production begins.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="qa-item">
-        <div class="qa-item__icon">🔍</div>
-        <div>
-          <div class="qa-item__title">100% Visual Inspection</div>
-          <p class="qa-item__desc">Every part is visually inspected before dispatch. Dimensional checks performed against customer drawings using calibrated gauging.</p>
-        </div>
-      </div>
-      <div class="qa-item">
-        <div class="qa-item__icon">📋</div>
-        <div>
-          <div class="qa-item__title">Full Traceability</div>
-          <p class="qa-item__desc">Material lot traceability from incoming raw material through production and delivery — essential for automotive and medical supply chains.</p>
-        </div>
-      </div>
-      <div class="qa-item">
-        <div class="qa-item__icon">📉</div>
-        <div>
-          <div class="qa-item__title">Defect Prevention (FMEA)</div>
-          <p class="qa-item__desc">Failure Mode and Effects Analysis conducted for all new products to identify and eliminate potential defect sources before production begins.</p>
+      <div class="qa-image-wrapper" data-reveal data-reveal-delay="100">
+        <div class="die-cut-border" style="display: block; border-radius: var(--radius-xl); overflow: hidden; height: 100%; width: 100%;">
+          <img src="images/Actual%20images/Machines,%20Facility,%20and%20People/optimized/Professional%20factory%20floor%20for%20industrial%20operations.jpeg" alt="Professional factory floor for industrial operations" class="qa-img">
         </div>
       </div>
     </div>
