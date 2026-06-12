@@ -1074,6 +1074,8 @@
   color: var(--clr-text-muted);
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  text-align: center;
+  max-width: none;
 }
 
 .marquee {
