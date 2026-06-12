@@ -23,7 +23,7 @@
 /* ── Main Grid ────────────────────────────────────────────── */
 .footer__main {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: auto 1.5fr 1fr 1fr 1fr;
   gap: var(--sp-12);
   padding-bottom: var(--sp-16);
   border-bottom: 1px solid var(--clr-border);
@@ -82,11 +82,16 @@
   text-transform: uppercase;
 }
 
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
 .footer__tagline {
   font-size: var(--fs-sm);
   color: var(--clr-text-secondary);
   line-height: var(--lh-relaxed);
-  max-width: 35ch;
   margin-bottom: var(--sp-6);
 }
 
