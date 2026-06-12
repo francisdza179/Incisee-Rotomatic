@@ -28,6 +28,12 @@
   --clr-accent-green:   var(--clr-brand-purple); /* Re-mapping green to purple for legacy support */
   --clr-accent-green-lt:#A83A9F;
 
+  /* ── EV Specialization ────────────────────────────────────── */
+  --clr-ev-green:        #22C55E;
+  --clr-ev-green-lt:     #4ADE80;
+  --clr-ev-green-dk:     #16A34A;
+  --clr-ev-green-glow:   rgba(34, 197, 94, 0.25);
+
   /* ── Text ─────────────────────────────────────────────────── */
   --clr-text-primary:   var(--clr-brand-black);
   --clr-text-secondary: #4A4A4A;

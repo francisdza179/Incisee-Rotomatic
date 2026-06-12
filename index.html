@@ -61,11 +61,14 @@
                 <div style="font-size:0.7rem;color:var(--clr-text-muted);">EMI shielding &amp; venting</div>
               </div>
             </a>
-            <a href="industries/ev.html" class="navbar__dropdown-item" role="menuitem">
-              <div class="navbar__dropdown-icon">🔋</div>
+            <a href="industries/ev.html" class="navbar__dropdown-item" role="menuitem" style="border-left: 3px solid var(--clr-ev-green); background: linear-gradient(90deg, rgba(34,197,94,0.05), transparent);">
+              <div class="navbar__dropdown-icon" style="background: var(--clr-ev-green-glow);">🔋</div>
               <div>
-                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">EV</div>
-                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Thermal management pads</div>
+                <div style="display:flex; align-items:center; gap:var(--sp-2);">
+                  <div style="font-weight:600;color:var(--clr-ev-green);font-size:0.8rem;">EV</div>
+                  <span class="badge badge-ev" style="font-size:0.6rem; padding:1px 4px;">90% FOCUS</span>
+                </div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Battery packs &amp; powertrains</div>
               </div>
             </a>
             <a href="industries/healthcare.html" class="navbar__dropdown-item" role="menuitem">
@@ -297,10 +300,10 @@
       </div>
       <div class="stat-card" data-reveal data-reveal-delay="300">
         <div class="stat-value">
-          ₹<span data-counter="161" data-suffix="M+">161M+</span>
+          <span data-counter="99" data-suffix="%+">99%+</span>
         </div>
-        <div class="stat-label">Annual Revenue</div>
-        <div class="stat-sub">FY 2024–25 · 20% YOY growth</div>
+        <div class="stat-label">On-Time Delivery</div>
+        <div class="stat-sub">Parts delivered on schedule</div>
       </div>
     </div>
   </div>
@@ -528,6 +531,19 @@
     <p class="section-subtitle" style="text-align:center;margin:0 auto var(--sp-12);" data-reveal data-reveal-delay="150">
       From automotive OEM assembly lines to sterile medical device environments — our precision components operate in the most demanding industrial ecosystems.
     </p>
+
+    <!-- EV Focus Callout -->
+    <div class="glass-card" style="margin-bottom:var(--sp-12); border-color:rgba(34,197,94,0.3); background: linear-gradient(135deg, rgba(34,197,94,0.05) 0%, transparent 100%);" data-reveal data-reveal-delay="200">
+      <div style="padding:var(--sp-8); display:flex; gap:var(--sp-8); align-items:center; flex-wrap:wrap; justify-content:space-between;">
+        <div style="flex:1; min-width:300px; max-width:600px;">
+          <div class="badge badge-ev" style="margin-bottom:var(--sp-4);">⚡ Our Primary Focus</div>
+          <h3 style="font-family:var(--font-display); font-size:var(--fs-2xl); font-weight:var(--fw-bold); margin-bottom:var(--sp-4);">90% of our production is dedicated to the <span class="gradient-text-ev">EV Industry</span></h3>
+          <p style="color:var(--clr-text-secondary); line-height:var(--lh-relaxed); margin-bottom:var(--sp-6);">From battery thermal management pads to ePTFE venting in battery packs, our precision die-cutting scales to meet the massive demands of modern electric vehicle manufacturing.</p>
+          <a href="industries/ev.html" class="btn" style="background:var(--clr-ev-green); color:white; box-shadow:0 4px 15px var(--clr-ev-green-glow);">Explore EV Solutions →</a>
+        </div>
+        <div style="font-size:120px; flex-shrink:0; opacity:0.9; filter:drop-shadow(0 0 30px var(--clr-ev-green-glow)); padding-right:var(--sp-8);" class="hide-mobile">🔋</div>
+      </div>
+    </div>
 
     <div class="industries-grid">
 

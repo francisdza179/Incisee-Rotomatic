@@ -222,6 +222,12 @@ p {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.gradient-text-ev {
+  background: linear-gradient(135deg, var(--clr-ev-green), var(--clr-ev-green-lt));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 /* ── Dividers ─────────────────────────────────────────────── */
 .divider {
@@ -256,6 +262,11 @@ p {
   background: rgba(8,178,25,0.1);
   color: var(--clr-accent-green);
   border: 1px solid rgba(8,178,25,0.2);
+}
+.badge-ev {
+  background: rgba(34,197,94,0.1);
+  color: var(--clr-ev-green);
+  border: 1px solid rgba(34,197,94,0.2);
 }
 
 /* ── Grid Helpers ─────────────────────────────────────────── */
@@ -346,6 +357,11 @@ p {
   background:
     radial-gradient(ellipse 60% 80% at 80% 50%, rgba(30,28,206,0.05) 0%, transparent 60%),
     radial-gradient(ellipse 40% 60% at 20% 80%, rgba(8,178,25,0.03) 0%, transparent 50%);
+}
+.page-hero-ev::before {
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, var(--clr-ev-green-glow) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(34, 197, 94, 0.05) 0%, transparent 50%);
 }
 .page-hero__grid {
   position: absolute;

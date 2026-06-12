@@ -51,11 +51,14 @@
                 <div style="font-size:0.7rem;color:var(--clr-text-muted);">EMI shielding &amp; venting</div>
               </div>
             </a>
-            <a href="../industries/ev.html" class="navbar__dropdown-item" role="menuitem">
-              <div class="navbar__dropdown-icon">🔋</div>
+            <a href="../industries/ev.html" class="navbar__dropdown-item" role="menuitem" style="border-left: 3px solid var(--clr-ev-green); background: linear-gradient(90deg, rgba(34,197,94,0.05), transparent);">
+              <div class="navbar__dropdown-icon" style="background: var(--clr-ev-green-glow);">🔋</div>
               <div>
-                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">EV</div>
-                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Thermal management pads</div>
+                <div style="display:flex; align-items:center; gap:var(--sp-2);">
+                  <div style="font-weight:600;color:var(--clr-ev-green);font-size:0.8rem;">EV</div>
+                  <span class="badge badge-ev" style="font-size:0.6rem; padding:1px 4px;">90% FOCUS</span>
+                </div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Battery packs &amp; powertrains</div>
               </div>
             </a>
             <a href="../industries/healthcare.html" class="navbar__dropdown-item" role="menuitem">
@@ -115,7 +118,7 @@
   </div>
 </header>
 
-<section class="page-hero" aria-label="EV header">
+<section class="page-hero page-hero-ev" aria-label="EV header">
   <div class="page-hero__grid" aria-hidden="true"></div>
   <div class="page-hero__gear page-hero__gear--br" aria-hidden="true"></div>
   <div class="blueprint-circle" style="top:10%;left:3%;width:75px;height:75px;" aria-hidden="true"></div>
@@ -126,8 +129,8 @@
       <a href="../industries.html">Industries</a><span class="sep">›</span>
       <span class="current">EV</span>
     </nav>
-    <span class="section-label page-hero-label" style="color:var(--clr-accent-blue);">💡 EV</span>
-    <h1 class="page-hero-title">EV <span class="gradient-text">Die-Cutting Solutions</span></h1>
+    <span class="section-label page-hero-label" style="color:var(--clr-ev-green);">💡 EV</span>
+    <h1 class="page-hero-title">EV <span class="gradient-text-ev">Die-Cutting Solutions</span></h1>
     <p class="page-hero-subtitle">Thermal management pads, protective die-cuts, and ePTFE venting membranes for consumer electronics, industrial controls, and PCB assemblies.</p>
     <div style="display:flex;gap:var(--sp-3);margin-top:var(--sp-8);flex-wrap:wrap;">
       <a href="../contact.html#rfq" class="btn btn-primary" id="elec-rfq-hero-btn">Request EV Quote</a>
@@ -141,11 +144,22 @@
     <div class="industry-content__inner">
       <div>
         <h2 class="section-title" style="margin-bottom:var(--sp-4);">Precision Components for <span>EV Manufacturing</span></h2>
+        
+        <div style="margin-bottom:var(--sp-8); background:var(--clr-bg-surface); padding:var(--sp-5); border-radius:var(--radius-lg); border:1px solid var(--clr-border);">
+          <div style="display:flex; justify-content:space-between; margin-bottom:var(--sp-2); font-size:var(--fs-sm); font-weight:var(--fw-bold);">
+            <span style="color:var(--clr-ev-green);">EV Industry Allocation</span>
+            <span style="color:var(--clr-text-muted);">90% of Total Production</span>
+          </div>
+          <div style="height:12px; background:rgba(30,28,206,0.1); border-radius:var(--radius-full); overflow:hidden; display:flex;">
+            <div style="width:90%; background:linear-gradient(90deg, var(--clr-ev-green), var(--clr-ev-green-lt));"></div>
+            <div style="width:10%; background:var(--clr-accent-blue); opacity:0.3;"></div>
+          </div>
+        </div>
         <p style="color:var(--clr-text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-6);font-size:var(--fs-base);">
-          Modern electronics demand components that are precise down to fractions of a millimetre — protecting sensitive circuits, managing heat efficiently, and ensuring environmental sealing across the product lifetime.
+          Modern electric vehicles demand components that are precise down to fractions of a millimetre — protecting sensitive battery packs, managing thermal runaway efficiently, and ensuring environmental sealing across the vehicle's lifetime.
         </p>
         <p style="color:var(--clr-text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--sp-8);font-size:var(--fs-sm);">
-          Incisee Rotomatic's precision die-cutting capabilities enable us to deliver electronics components with tight dimensional tolerances, clean-cut edges, and consistent adhesive application — all critical for high-volume electronics assembly.
+          Incisee Rotomatic's precision die-cutting capabilities enable us to deliver EV components with tight dimensional tolerances, clean-cut edges, and consistent adhesive application — all critical for high-volume battery pack and powertrain assembly.
         </p>
         <div class="industry-products-grid">
           <a href="../products/thermal-grease-pads.html" class="ind-product-card" id="elec-thermal-link">
@@ -179,11 +193,11 @@
         <div class="sidebar-card">
           <div class="sidebar-card__title">Applications</div>
           <ul style="display:flex;flex-direction:column;gap:var(--sp-2);font-size:var(--fs-sm);color:var(--clr-text-muted);">
-            <li style="display:flex;gap:var(--sp-2);align-items:center;"><span>→</span> Consumer electronics (smartphones, wearables)</li>
-            <li style="display:flex;gap:var(--sp-2);align-items:center;"><span>→</span> Industrial control panels</li>
-            <li style="display:flex;gap:var(--sp-2);align-items:center;"><span>→</span> LED lighting systems</li>
-            <li style="display:flex;gap:var(--sp-2);align-items:center;"><span>→</span> Power electronics modules</li>
-            <li style="display:flex;gap:var(--sp-2);align-items:center;"><span>→</span> Automotive ECUs</li>
+            <li style="display:flex;gap:var(--sp-2);align-items:center;"><span>→</span> Battery pack thermal management</li>
+            <li style="display:flex;gap:var(--sp-2);align-items:center;"><span>→</span> EV powertrain sealing</li>
+            <li style="display:flex;gap:var(--sp-2);align-items:center;"><span>→</span> High-voltage component isolation</li>
+            <li style="display:flex;gap:var(--sp-2);align-items:center;"><span>→</span> Charging station enclosures</li>
+            <li style="display:flex;gap:var(--sp-2);align-items:center;"><span>→</span> Battery Management Systems (BMS)</li>
           </ul>
         </div>
         <div class="sidebar-card sidebar-rfq-card">
@@ -199,8 +213,8 @@
 <section class="cta-banner" aria-label="EV CTA">
   <div class="container">
     <div class="cta-banner__inner" data-reveal>
-      <h2 class="cta-banner__title">Need precision <span class="gradient-text">electronics components</span>?</h2>
-      <p class="cta-banner__subtitle">Our die-cutting capabilities can match the tightest tolerances in electronics manufacturing. Let's talk.</p>
+      <h2 class="cta-banner__title">Need precision <span class="gradient-text-ev">EV components</span>?</h2>
+      <p class="cta-banner__subtitle">Our die-cutting capabilities can match the tightest tolerances in EV and battery pack manufacturing. Let's talk.</p>
       <div class="cta-banner__actions">
         <a href="../contact.html#rfq" class="btn btn-primary btn-lg" id="elec-cta-rfq-btn">Request a Quote</a>
         <a href="../contact.html" class="btn btn-outline btn-lg" id="elec-contact-btn">Contact Us</a>
