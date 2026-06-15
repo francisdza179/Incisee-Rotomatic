@@ -231,6 +231,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: var(--sp-6) 0;
   gap: var(--sp-4);
 }
@@ -265,4 +266,22 @@
   color: var(--clr-text-muted);
   font-family: var(--font-mono);
   letter-spacing: 0.04em;
+}
+
+.footer__signature {
+  width: 100%;
+  text-align: center;
+  margin-top: var(--sp-2);
+  font-size: var(--sp-3);
+  opacity: 0.6;
+}
+
+.footer__signature a {
+  color: var(--clr-text-muted);
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.footer__signature a:hover {
+  color: var(--clr-accent-blue-lt);
 }
