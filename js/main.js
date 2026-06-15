@@ -13,8 +13,14 @@
   if (!navbar) return;
 
   // Scroll-triggered glass effect
+  const heroImage = document.querySelector('.page-hero__bg-image');
+  const heroSection = document.querySelector('.page-hero');
+  const scrollThreshold = heroImage && heroSection
+    ? heroSection.offsetTop + heroSection.offsetHeight - navbar.offsetHeight
+    : 20;
+
   const handleScroll = () => {
-    if (window.scrollY > 20) {
+    if (window.scrollY > scrollThreshold) {
       navbar.classList.add('scrolled');
       navbar.classList.remove('transparent');
     } else {

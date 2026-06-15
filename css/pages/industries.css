@@ -450,6 +450,18 @@ body:has(.page-hero__bg-image) .navbar.scrolled {
   background: rgba(255, 255, 255, 0.98);
 }
 
+body:has(.page-hero__bg-image) .navbar.transparent .navbar__logo-wordmark {
+  filter: brightness(2.5);
+}
+
+/* Lighten logo-colour gradient text on pages with dark overlay */
+.page-hero__overlay ~ .container .gradient-text {
+  background: linear-gradient(135deg, #F97316, #A78BFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ── Industry Landing Card Image ─────────────────────────── */
 .ind-landing-card {
   position: relative;
