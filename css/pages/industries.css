@@ -226,6 +226,11 @@
   flex-wrap: wrap;
   margin-bottom: var(--sp-10);
 }
+@media (max-width: 768px) {
+  .products-filter-bar { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: var(--sp-2); }
+  .products-filter-bar::-webkit-scrollbar { height: 3px; }
+  .products-filter-bar::-webkit-scrollbar-thumb { background: var(--clr-border); border-radius: 3px; }
+}
 
 .filter-btn {
   padding: var(--sp-2) var(--sp-4);

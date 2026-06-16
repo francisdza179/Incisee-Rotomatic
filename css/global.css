@@ -674,8 +674,12 @@ p {
 
 .cta-banner__note {
   margin-top: var(--sp-5);
+  margin-left: auto;
+  margin-right: auto;
   font-size: var(--fs-sm);
   color: var(--clr-text-muted);
+  text-align: center;
+  max-width: none;
 }
 
 @media (max-width: 640px) {

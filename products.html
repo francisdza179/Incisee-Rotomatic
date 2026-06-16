@@ -11,8 +11,28 @@
   <link rel="stylesheet" href="css/pages/industries.css">
   <style>
     .products-page { background: var(--clr-bg-base); padding: var(--sp-20) 0; }
+
+    .material-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-5); margin-top:var(--sp-4); }
+    @media(max-width:900px){ .material-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:640px){ .material-grid{grid-template-columns:1fr;} }
+    .material-card { padding:var(--sp-5); background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-lg); transition:all var(--transition-slow); }
+    .material-card:hover { border-color:var(--clr-border-glow); box-shadow:var(--shadow-glow-blue); transform:translateY(-3px); }
+    .material-card__header { display:flex; align-items:center; gap:var(--sp-3); margin-bottom:var(--sp-3); }
+    .material-card__icon { font-size:28px; flex-shrink:0; }
+    .material-card__name { font-family:var(--font-display); font-size:var(--fs-sm); font-weight:var(--fw-bold); color:var(--clr-text-primary); }
+    .material-card__spec { font-size:var(--fs-xs); color:var(--clr-accent-blue-lt); font-weight:var(--fw-semibold); margin-top:2px; }
+    .material-card__tags { display:flex; gap:var(--sp-1); flex-wrap:wrap; }
+    .material-card__tag { font-size:11px; color:var(--clr-text-muted); background:var(--clr-bg-surface); border:1px solid var(--clr-border); padding:2px var(--sp-2); border-radius:var(--radius-sm); }
+
+    .material-library-showcase { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-8); align-items:center; margin-top:var(--sp-12); background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-xl); overflow:hidden; }
+    @media(max-width:768px){ .material-library-showcase{grid-template-columns:1fr;} }
+    .material-library-showcase__img { height:100%; min-height:260px; }
+    .material-library-showcase__img img { width:100%; height:100%; object-fit:cover; display:block; }
+    .material-library-showcase__body { padding:var(--sp-7); }
+    .material-library-showcase__body h3 { font-family:var(--font-display); font-size:var(--fs-lg); font-weight:var(--fw-bold); color:var(--clr-text-primary); margin-bottom:var(--sp-3); }
+    .material-library-showcase__body p { font-size:var(--fs-sm); color:var(--clr-text-muted); line-height:var(--lh-relaxed); max-width:none; margin:0; }
   </style>
-<link rel="icon" type="image/png" href="images/Actual%20images/Incisee%20Rotomatic%20Favicon%20transparent.png">
+<link rel="icon" type="image/png" href="images/Logos%20and%20Favicons/Incisee%20Rotomatic%20Favicon%20transparent.png">
 </head>
 <body>
 <header class="navbar scrolled" id="navbar" role="banner">
@@ -83,9 +103,9 @@
               <div class="navbar__dropdown-icon">🔬</div>
               <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">ePTFE Membranes</div>
             </a>
-            <a href="products/sealing-gaskets.html" class="navbar__dropdown-item" role="menuitem">
-              <div class="navbar__dropdown-icon">⚙️</div>
-              <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Sealing Gaskets</div>
+            <a href="products/rubber-gaskets.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🫧</div>
+              <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Rubber Gaskets</div>
             </a>
             <a href="products/electronic-die-cuts.html" class="navbar__dropdown-item" role="menuitem">
               <div class="navbar__dropdown-icon">💡</div>
@@ -121,7 +141,7 @@
 </header>
 
 <section class="page-hero" aria-label="Products header">
-  <img src="images/Actual%20images/Machines,%20Facility,%20and%20People/Material%20&%20Product%20Sample%20Library.jpeg" alt="" class="page-hero__bg-image" aria-hidden="true">
+  <img src="images/Machines,%20Facility,%20and%20People/Material%20&%20Product%20Sample%20Library.jpeg" alt="" class="page-hero__bg-image" aria-hidden="true">
   <div class="page-hero__overlay" aria-hidden="true"></div>
   <div class="page-hero__grid" aria-hidden="true"></div>
   <div class="page-hero__gear page-hero__gear--br" aria-hidden="true"></div>
@@ -138,69 +158,189 @@
   </div>
 </section>
 
+<!-- MATERIAL RANGE -->
+<section class="section-pad bg-surface" aria-label="Material range">
+  <div class="container">
+    <div data-reveal style="text-align:center;max-width:55ch;margin:0 auto var(--sp-8);">
+      <span class="section-label" style="justify-content:center;">Material Capabilities</span>
+      <h2 class="section-title">Our Core <span>Material Range</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">
+        We maintain a comprehensive Material &amp; Product Sample Library designed for rapid NPD — enabling material selection, benchmarking, prototyping, and customer sample approvals across medical, automotive, electronics, and industrial tape projects.
+      </p>
+    </div>
+
+    <div class="material-grid" data-reveal>
+      <div class="material-card">
+        <div class="material-card__header">
+          <div class="material-card__icon">🔬</div>
+          <div>
+            <div class="material-card__name">ePTFE Membranes</div>
+            <div class="material-card__spec">Thickness: 10 – 200 μm</div>
+          </div>
+        </div>
+        <div class="material-card__tags">
+          <span class="material-card__tag">Oleophobic</span>
+          <span class="material-card__tag">Hydrophobic</span>
+          <span class="material-card__tag">IP-rated</span>
+          <span class="material-card__tag">Automotive-grade</span>
+        </div>
+      </div>
+      <div class="material-card">
+        <div class="material-card__header">
+          <div class="material-card__icon">🔗</div>
+          <div>
+            <div class="material-card__name">Meshes</div>
+            <div class="material-card__spec">Aperture: 20 – 500 μm</div>
+          </div>
+        </div>
+        <div class="material-card__tags">
+          <span class="material-card__tag">Open area control</span>
+          <span class="material-card__tag">Filtration &amp; airflow</span>
+          <span class="material-card__tag">EMI &amp; dust protection</span>
+        </div>
+      </div>
+      <div class="material-card">
+        <div class="material-card__header">
+          <div class="material-card__icon">📋</div>
+          <div>
+            <div class="material-card__name">Adhesive Tapes</div>
+            <div class="material-card__spec">Thickness: 20 – 2000 μm</div>
+          </div>
+        </div>
+        <div class="material-card__tags">
+          <span class="material-card__tag">Acrylic</span>
+          <span class="material-card__tag">Rubber</span>
+          <span class="material-card__tag">Silicone</span>
+          <span class="material-card__tag">High-temperature</span>
+          <span class="material-card__tag">Pressure-sensitive</span>
+        </div>
+      </div>
+      <div class="material-card">
+        <div class="material-card__header">
+          <div class="material-card__icon">🎞️</div>
+          <div>
+            <div class="material-card__name">Non-Adhesive Films</div>
+            <div class="material-card__spec">Thickness: 12 – 500 μm</div>
+          </div>
+        </div>
+        <div class="material-card__tags">
+          <span class="material-card__tag">PET</span>
+          <span class="material-card__tag">TPU</span>
+          <span class="material-card__tag">PI</span>
+          <span class="material-card__tag">PE</span>
+          <span class="material-card__tag">Electrical insulation</span>
+          <span class="material-card__tag">Structural films</span>
+        </div>
+      </div>
+      <div class="material-card">
+        <div class="material-card__header">
+          <div class="material-card__icon">🛡️</div>
+          <div>
+            <div class="material-card__name">Protective Films</div>
+            <div class="material-card__spec">Thickness: 20 – 150 μm</div>
+          </div>
+        </div>
+        <div class="material-card__tags">
+          <span class="material-card__tag">Low to medium tack</span>
+          <span class="material-card__tag">Clean peel</span>
+          <span class="material-card__tag">Scratch protection</span>
+          <span class="material-card__tag">Up to 250°C</span>
+        </div>
+      </div>
+      <div class="material-card">
+        <div class="material-card__header">
+          <div class="material-card__icon">🎨</div>
+          <div>
+            <div class="material-card__name">Masking Tapes</div>
+            <div class="material-card__spec">Temp: 80°C – 260°C</div>
+          </div>
+        </div>
+        <div class="material-card__tags">
+          <span class="material-card__tag">Clean removal</span>
+          <span class="material-card__tag">Paint compatible</span>
+          <span class="material-card__tag">Plasma process compatible</span>
+        </div>
+      </div>
+      <div class="material-card">
+        <div class="material-card__header">
+          <div class="material-card__icon">💪</div>
+          <div>
+            <div class="material-card__name">VHB Tapes</div>
+            <div class="material-card__spec">Thickness: 0.2 – 2.3 mm</div>
+          </div>
+        </div>
+        <div class="material-card__tags">
+          <span class="material-card__tag">High-strength acrylic foam</span>
+          <span class="material-card__tag">Vibration &amp; shock resistant</span>
+          <span class="material-card__tag">Structural bonding</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="material-library-showcase" data-reveal>
+      <div class="material-library-showcase__img">
+        <img src="images/Machines,%20Facility,%20and%20People/Material%20&%20Product%20Sample%20Library.jpeg" alt="Material & Product Sample Library">
+      </div>
+      <div class="material-library-showcase__body">
+        <h3>Material &amp; Product Sample Library</h3>
+        <p>Designed for rapid NPD and customer development by providing material selection, benchmarking, prototyping, and customer sample approvals. Supports medical, automotive, electronics, and industrial tape projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="products-page" aria-label="Products catalogue">
   <div class="container">
 
     <!-- Filter Bar -->
     <div class="products-filter-bar" role="group" aria-label="Product category filter">
-      <button class="filter-btn active" data-filter="all" id="filter-all">All Products</button>
-      <button class="filter-btn" data-filter="membranes" id="filter-membranes">Membranes &amp; Films</button>
-      <button class="filter-btn" data-filter="gaskets" id="filter-gaskets">Gaskets &amp; Seals</button>
-      <button class="filter-btn" data-filter="tape" id="filter-tape">Tape Solutions</button>
-      <button class="filter-btn" data-filter="diecuts" id="filter-diecuts">Die-Cut Components</button>
-      <button class="filter-btn" data-filter="pads" id="filter-pads">Pads &amp; Thermal</button>
+      <button class="filter-btn active" data-filter="all">All Products</button>
+      <button class="filter-btn" data-filter="membranes">Membranes &amp; Vent</button>
+      <button class="filter-btn" data-filter="thermal">Thermal Pads</button>
+      <button class="filter-btn" data-filter="films">Protective Films</button>
+      <button class="filter-btn" data-filter="valves">Relief Valves</button>
+      <button class="filter-btn" data-filter="foam">Adhesive &amp; Foam</button>
+      <button class="filter-btn" data-filter="insulators">Insulators</button>
+      <button class="filter-btn" data-filter="seals">Caps &amp; Seals</button>
     </div>
 
     <div class="products-all-grid" id="products-grid">
 
-      <!-- ePTFE Membranes -->
-      <a href="products/epfte-membranes.html" class="product-card" data-category="membranes" data-reveal id="prod-page-eptfe">
-        <div class="product-card__image">🔬</div>
+      <!-- Membrane & Mesh Die-Cuts -->
+      <a href="products/epfte-membranes.html" class="product-card" data-category="membranes" data-reveal>
+        <div class="product-card__image"><img src="images/products/Membrane%20and%20Mesh%20Die%20Cut.png" alt="Membrane &amp; Mesh Die-Cuts" class="product-card__img"><div class="die-cut-overlay"></div></div>
         <div class="product-card__body">
-          <div class="product-card__category">Membranes &amp; Films</div>
-          <div class="product-card__name">ePTFE Membranes</div>
-          <p class="product-card__desc">Expanded PTFE membranes for hydrophobic venting, filtration, and sterile barriers. Used in automotive sensors, medical devices, and electronics enclosures.</p>
+          <div class="product-card__category">Membranes &amp; Vent</div>
+          <div class="product-card__name">Membrane &amp; Mesh Die-Cuts</div>
+          <p class="product-card__desc">Precision die-cut ePTFE membranes and woven meshes for venting, filtration, and pressure equalization in electronic enclosures and medical devices.</p>
           <div class="product-card__footer">
-            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Medical</span><span class="product-card__tag">Electronics</span><span class="product-card__tag product-card__tag--ev">EV</span></div>
+            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Medical</span><span class="product-card__tag">Electronics</span></div>
             <div class="product-card__arrow">→</div>
           </div>
         </div>
       </a>
 
-      <!-- Protective Film -->
-      <a href="products/protective-film.html" class="product-card" data-category="membranes" data-reveal data-reveal-delay="50" id="prod-page-film">
-        <div class="product-card__image">🎬</div>
+      <!-- Adhesive Vent Stickers -->
+      <a href="products/adhesive-vent-stickers.html" class="product-card" data-category="membranes" data-reveal data-reveal-delay="50">
+        <div class="product-card__image"><img src="images/products/Adhesive%20Vent%20Stickers.png" alt="Adhesive Vent Stickers" class="product-card__img"><div class="die-cut-overlay"></div></div>
         <div class="product-card__body">
-          <div class="product-card__category">Membranes &amp; Films</div>
-          <div class="product-card__name">Protective Film</div>
-          <p class="product-card__desc">Die-cut protective films for surface masking, paint protection, and component shielding during manufacturing, assembly, and transit.</p>
+          <div class="product-card__category">Membranes &amp; Vent</div>
+          <div class="product-card__name">Adhesive Vent Stickers</div>
+          <p class="product-card__desc">Pre-assembled vent stickers with ePTFE membrane and pressure-sensitive adhesive backing for rapid installation on housings and enclosures.</p>
           <div class="product-card__footer">
-            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Electronics</span><span class="product-card__tag product-card__tag--ev">EV</span></div>
-          </div>
-        </div>
-      </a>
-
-      <!-- Sealing Gaskets -->
-      <a href="products/sealing-gaskets.html" class="product-card" data-category="gaskets" data-reveal data-reveal-delay="100" id="prod-page-seal">
-        <div class="product-card__image">⚙️</div>
-        <div class="product-card__body">
-          <div class="product-card__category">Gaskets &amp; Seals</div>
-          <div class="product-card__name">Sealing Gaskets</div>
-          <p class="product-card__desc">Precision-cut sealing gaskets for automotive housings, industrial flanges, electronic enclosures, and fluid system connections.</p>
-          <div class="product-card__footer">
-            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Industrial</span><span class="product-card__tag product-card__tag--ev">EV</span></div>
+            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Electronics</span><span class="product-card__tag">Industrial</span></div>
             <div class="product-card__arrow">→</div>
           </div>
         </div>
       </a>
 
-      <!-- Thermal Grease Pads -->
-      <a href="products/thermal-grease-pads.html" class="product-card" data-category="pads" data-reveal data-reveal-delay="450" id="prod-page-thermal">
-        <div class="product-card__image">🌡️</div>
+      <!-- Thermal Pads -->
+      <a href="products/thermal-grease-pads.html" class="product-card" data-category="thermal" data-reveal data-reveal-delay="100">
+        <div class="product-card__image"><img src="images/products/Thermal%20Pads.png" alt="Thermal Pads" class="product-card__img"><div class="die-cut-overlay"></div></div>
         <div class="product-card__body">
-          <div class="product-card__category">Pads &amp; Thermal</div>
-          <div class="product-card__name">Thermal Grease Pads</div>
-          <p class="product-card__desc">Phase-change thermal interface pads for CPU/GPU heat management, power electronics, and LED assemblies. Die-cut to precise specifications.</p>
+          <div class="product-card__category">Thermal Pads</div>
+          <div class="product-card__name">Thermal Pads</div>
+          <p class="product-card__desc">Silicone and non-silicone thermal interface pads for heat dissipation in power electronics, EV batteries, and LED assemblies.</p>
           <div class="product-card__footer">
             <div class="product-card__tags"><span class="product-card__tag">Electronics</span><span class="product-card__tag">Power</span><span class="product-card__tag product-card__tag--ev">EV</span></div>
             <div class="product-card__arrow">→</div>
@@ -208,29 +348,211 @@
         </div>
       </a>
 
-      <!-- Silicone Pads -->
-      <a href="products/silicone-pads.html" class="product-card" data-category="pads" data-reveal data-reveal-delay="500" id="prod-page-sil">
-        <div class="product-card__image">🔷</div>
+      <!-- Protective Films -->
+      <a href="products/protective-film.html" class="product-card" data-category="films" data-reveal data-reveal-delay="150">
+        <div class="product-card__image"><img src="images/products/Protective%20Films.png" alt="Protective Films" class="product-card__img"><div class="die-cut-overlay"></div></div>
         <div class="product-card__body">
-          <div class="product-card__category">Pads &amp; Thermal</div>
-          <div class="product-card__name">Silicone Compression Pads</div>
-          <p class="product-card__desc">High-temperature silicone pads for electrical isolation, thermal interface, and vibration dampening across electronics and industrial applications.</p>
+          <div class="product-card__category">Protective Films</div>
+          <div class="product-card__name">Protective Films</div>
+          <p class="product-card__desc">Die-cut protective films with 80°C to 260°C thermal withstand and ESD protection for surface protection during manufacturing, assembly, and transit.</p>
           <div class="product-card__footer">
-            <div class="product-card__tags"><span class="product-card__tag">Electronics</span><span class="product-card__tag">Industrial</span><span class="product-card__tag product-card__tag--ev">EV</span></div>
+            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Electronics</span><span class="product-card__tag product-card__tag--ev">EV</span></div>
             <div class="product-card__arrow">→</div>
           </div>
         </div>
       </a>
 
-      <!-- Rotary Die-Cut Parts -->
-      <a href="products/rotary-flatbed-parts.html" class="product-card" data-category="diecuts" data-reveal data-reveal-delay="550" id="prod-page-rotary">
-        <div class="product-card__image">🌀</div>
+      <!-- PRV Valves -->
+      <a href="products/prv-valves.html" class="product-card" data-category="valves" data-reveal data-reveal-delay="200">
+        <div class="product-card__image"><img src="images/products/PRV%20Valves.png" alt="PRV Valves" class="product-card__img"><div class="die-cut-overlay"></div></div>
         <div class="product-card__body">
-          <div class="product-card__category">Die-Cut Components</div>
-          <div class="product-card__name">Custom Die-Cut Parts</div>
-          <p class="product-card__desc">Bespoke rotary and flatbed die-cut parts in any material — from concept drawing to production. Our core capability, applied to any application.</p>
+          <div class="product-card__category">Relief Valves</div>
+          <div class="product-card__name">PRV Valves</div>
+          <p class="product-card__desc">Pressure relief valves for battery venting, enclosure pressure equalization, and safety applications in electronics and industrial systems.</p>
           <div class="product-card__footer">
-            <div class="product-card__tags"><span class="product-card__tag">Custom</span><span class="product-card__tag">All Industries</span></div>
+            <div class="product-card__tags"><span class="product-card__tag">Electronics</span><span class="product-card__tag product-card__tag--ev">EV</span><span class="product-card__tag">Industrial</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- EP Valves -->
+      <a href="products/ep-valves.html" class="product-card" data-category="valves" data-reveal data-reveal-delay="250">
+        <div class="product-card__image"><img src="images/products/EP%20Valves.png" alt="EP Valves" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Relief Valves</div>
+          <div class="product-card__name">EP Valves</div>
+          <p class="product-card__desc">Explosion-proof valves for hazardous environment enclosures, battery packs, and industrial safety systems requiring pressure management.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag product-card__tag--ev">EV</span><span class="product-card__tag">Industrial</span><span class="product-card__tag">Safety</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- VHB Tapes -->
+      <a href="products/vhb-tape.html" class="product-card" data-category="foam" data-reveal data-reveal-delay="300">
+        <div class="product-card__image"><img src="images/products/VHB%20Tapes.png" alt="VHB Tapes" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Adhesive &amp; Foam</div>
+          <div class="product-card__name">VHB Tapes</div>
+          <p class="product-card__desc">High-strength acrylic foam tapes for structural bonding of panels, trim, and components. Vibration and shock resistant with excellent weatherproofing.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Industrial</span><span class="product-card__tag product-card__tag--ev">EV</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Double Sided Tape -->
+      <a href="products/double-sided-tape.html" class="product-card" data-category="foam" data-reveal data-reveal-delay="350">
+        <div class="product-card__image"><img src="images/products/Double-Sided%20Tape.png" alt="Double Sided Tape" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Adhesive &amp; Foam</div>
+          <div class="product-card__name">Double Sided Tape</div>
+          <p class="product-card__desc">Acrylic, rubber, and silicone double-sided tapes for mounting, splicing, and assembly applications across industrial and electronic manufacturing.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Electronics</span><span class="product-card__tag">Industrial</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Adhesive Tape -->
+      <a href="products/adhesive-tape.html" class="product-card" data-category="foam" data-reveal data-reveal-delay="400">
+        <div class="product-card__image"><img src="images/products/Adhesive%20Tape.png" alt="Adhesive Tape" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Adhesive &amp; Foam</div>
+          <div class="product-card__name">Adhesive Tape</div>
+          <p class="product-card__desc">Single-sided adhesive tapes in acrylic, rubber, and silicone grades for masking, bundling, surface protection, and high-temperature applications.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Industrial</span><span class="product-card__tag">Electronics</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Foam Die-Cuts -->
+      <a href="products/foam-die-cuts.html" class="product-card" data-category="foam" data-reveal data-reveal-delay="450">
+        <div class="product-card__image"><img src="images/products/Foam%20Die%20Cuts.png" alt="Foam Die-Cuts" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Adhesive &amp; Foam</div>
+          <div class="product-card__name">Foam Die-Cuts</div>
+          <p class="product-card__desc">Precision die-cut foam components for sealing, cushioning, vibration dampening, thermal insulation, and gasketing across multiple industries.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Electronics</span><span class="product-card__tag">Industrial</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Silicone Foam Gaskets -->
+      <a href="products/silicone-foam-gaskets.html" class="product-card" data-category="foam" data-reveal data-reveal-delay="500">
+        <div class="product-card__image"><img src="images/products/Silicon%20Foam%20Gaskets.png" alt="Silicone Foam Gaskets" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Adhesive &amp; Foam</div>
+          <div class="product-card__name">Silicone Foam Gaskets</div>
+          <p class="product-card__desc">Closed-cell silicone foam gaskets for high-temperature sealing, weatherproofing, and compression gasketing in demanding environments.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Industrial</span><span class="product-card__tag product-card__tag--ev">EV</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Rubber Gaskets -->
+      <a href="products/rubber-gaskets.html" class="product-card" data-category="foam" data-reveal data-reveal-delay="550">
+        <div class="product-card__image"><img src="images/products/Rubber%20Gaskets.png" alt="Rubber Gaskets" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Adhesive &amp; Foam</div>
+          <div class="product-card__name">Rubber Gaskets</div>
+          <p class="product-card__desc">Precision die-cut rubber gaskets for automotive, industrial, and electronic enclosure sealing applications requiring durability and flexibility.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Industrial</span><span class="product-card__tag">Electronics</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Polyester Tape Die-Cuts -->
+      <a href="products/polyester-tape-die-cuts.html" class="product-card" data-category="foam" data-reveal data-reveal-delay="600">
+        <div class="product-card__image"><img src="images/products/Polyester%20Tape%20Die%20Cuts.png" alt="Polyester Tape Die-Cuts" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Adhesive &amp; Foam</div>
+          <div class="product-card__name">Polyester Tape Die-Cuts</div>
+          <p class="product-card__desc">Custom die-cut polyester (PET) tape parts for electrical insulation, masking, and high-temperature applications in electronics and industrial assembly.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag">Electronics</span><span class="product-card__tag">Industrial</span><span class="product-card__tag">Automotive</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Polyamide Tapes -->
+      <a href="products/polyamide-tapes.html" class="product-card" data-category="foam" data-reveal data-reveal-delay="650">
+        <div class="product-card__image"><img src="images/products/Polyamide%20Tapes.png" alt="Polyamide Tapes" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Adhesive &amp; Foam</div>
+          <div class="product-card__name">Polyamide Tapes</div>
+          <p class="product-card__desc">Polyamide (Kapton-type) tape die-cuts for high-temperature masking, solder wave protection, and electrical insulation in PCB assembly.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag">Electronics</span><span class="product-card__tag">Automotive</span><span class="product-card__tag">Industrial</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- XLPE Foam Gaskets -->
+      <a href="products/xlpe-foam-gaskets.html" class="product-card" data-category="foam" data-reveal data-reveal-delay="700">
+        <div class="product-card__image"><img src="images/products/XLPE%20Foam%20Gaskets.png" alt="XLPE Foam Gaskets" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Adhesive &amp; Foam</div>
+          <div class="product-card__name">XLPE Foam Gaskets</div>
+          <p class="product-card__desc">Cross-linked polyethylene foam gaskets for environmental sealing, cushioning, and vibration isolation in automotive and industrial applications.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Industrial</span><span class="product-card__tag">Electronics</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- TPU/TPV Die-Cuts -->
+      <a href="products/tpu-tpv-die-cuts.html" class="product-card" data-category="insulators" data-reveal data-reveal-delay="750">
+        <div class="product-card__image"><img src="images/products/TPUTPV%20Die%20Cuts.png" alt="TPU/TPV Die-Cuts" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Insulators</div>
+          <div class="product-card__name">TPU/TPV Die-Cuts</div>
+          <p class="product-card__desc">Precision die-cut thermoplastic polyurethane and vulcanizate parts for electrical insulation, sealing, and vibration dampening.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Electronics</span><span class="product-card__tag">Industrial</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Medical Assembly -->
+      <a href="products/medical-assembly.html" class="product-card" data-category="seals" data-reveal data-reveal-delay="800">
+        <div class="product-card__image"><img src="images/products/Medical%20Assembly.png" alt="Medical Assembly" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Caps &amp; Seals</div>
+          <div class="product-card__name">Medical Assembly</div>
+          <p class="product-card__desc">Die-cut and assembled components for medical devices including breathable membranes, sterile barrier systems, and fluid management seals.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag">Medical</span><span class="product-card__tag">Healthcare</span></div>
+            <div class="product-card__arrow">→</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Breathable Caps & Seals -->
+      <a href="products/breathable-caps-seals.html" class="product-card" data-category="seals" data-reveal data-reveal-delay="850">
+        <div class="product-card__image"><img src="images/products/Vent%20Stickers.png" alt="Breathable Caps &amp; Seals" class="product-card__img"><div class="die-cut-overlay"></div></div>
+        <div class="product-card__body">
+          <div class="product-card__category">Caps &amp; Seals</div>
+          <div class="product-card__name">Breathable Caps &amp; Seals</div>
+          <p class="product-card__desc">Breathable caps and seals with ePTFE membrane for venting, dust protection, and pressure equalization in sensors, motors, and enclosures.</p>
+          <div class="product-card__footer">
+            <div class="product-card__tags"><span class="product-card__tag">Automotive</span><span class="product-card__tag">Electronics</span><span class="product-card__tag">Industrial</span></div>
             <div class="product-card__arrow">→</div>
           </div>
         </div>
@@ -260,7 +582,7 @@
       <!-- Brand Column -->
       <div class="footer__brand">
         <a href="index.html" class="footer__logo">
-                    <img src="images/Actual images/Incisee Rotomatic Logo (BGR).png" alt="Incisee Rotomatic Logo" style="width: 191px; height: auto;">
+                    <img src="images/Logos and Favicons/Incisee Rotomatic Logo (BGR).png" alt="Incisee Rotomatic Logo" style="width: 191px; height: auto;">
         </a>
       </div>
 

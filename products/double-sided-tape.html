@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Double Sided Tape from Incisee Rotomatic — precision die-cut double-sided tapes in acrylic, rubber, and silicone adhesives for mounting, splicing, and assembly.">
+  <title>Double Sided Tape | Incisee Rotomatic Pvt. Ltd.</title>
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components/navbar.css">
+  <link rel="stylesheet" href="../css/components/footer.css">
+  <link rel="stylesheet" href="../css/pages/industries.css">
+  <style>
+    .product-hero { padding:calc(var(--navbar-height) + var(--sp-20)) 0 var(--sp-16); background:var(--clr-bg-base); }
+    .product-hero__inner { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-16); align-items:center; }
+    @media(max-width:900px){ .product-hero__inner{grid-template-columns:1fr;} }
+    .product-hero__image { aspect-ratio:1; background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-2xl); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+    .product-hero__image::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(30,28,206,0.05),transparent 60%); z-index:1; }
+    .product-hero__image img { width:100%; height:100%; object-fit:cover; }
+    .spec-section { padding:var(--sp-16) 0; background:var(--clr-bg-surface); }
+    .specs-table { width:100%; border-collapse:collapse; margin-top:var(--sp-6); }
+    .specs-table th, .specs-table td { padding:var(--sp-3) var(--sp-5); text-align:left; font-size:var(--fs-sm); border-bottom:1px solid var(--clr-border); }
+    .specs-table th { color:var(--clr-text-muted); font-weight:var(--fw-medium); width:40%; background:var(--clr-bg-card); }
+    .specs-table td { color:var(--clr-text-primary); font-weight:var(--fw-medium); }
+    .specs-table tr:first-child th, .specs-table tr:first-child td { border-top:1px solid var(--clr-border); }
+    .apps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-4); margin-top:var(--sp-6); }
+    @media(max-width:640px){ .apps-grid{grid-template-columns:1fr;} }
+    .app-chip { padding:var(--sp-3) var(--sp-4); background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-lg); font-size:var(--fs-sm); color:var(--clr-text-secondary); display:flex; align-items:center; gap:var(--sp-2); }
+    .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-5); margin-top:var(--sp-8); }
+    @media(max-width:640px){ .related-grid{grid-template-columns:1fr;} }
+    .rel-card { display:block; padding:var(--sp-5); background:var(--clr-bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-xl); transition:all var(--transition-base); text-decoration:none; }
+    .rel-card:hover { border-color:var(--clr-border-glow); box-shadow:var(--shadow-glow-blue); transform:translateY(-3px); }
+    .rel-card__icon { font-size:32px; margin-bottom:var(--sp-3); }
+    .rel-card__name { font-size:var(--fs-base); font-weight:var(--fw-bold); color:var(--clr-text-primary); margin-bottom:var(--sp-1); }
+    .rel-card__cat { font-size:var(--fs-xs); color:var(--clr-accent-blue-lt); }
+  </style>
+<link rel="icon" type="image/png" href="../images/Logos%20and%20Favicons/Incisee%20Rotomatic%20Favicon%20transparent.png">
+</head>
+<body>
+<header class="navbar scrolled" id="navbar" role="banner">
+  <div class="container">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__logo">
+                <img src="../images/brand/incisee-icon.png" alt="" class="navbar__logo-icon"><img src="../images/brand/incisee-wordmark.png" alt="Incisee Rotomatic" class="navbar__logo-wordmark">
+      </a>
+      <nav class="navbar__nav" role="navigation" aria-label="Primary navigation">
+        <a href="../index.html" class="navbar__link">Home</a>
+        <a href="../about.html" class="navbar__link">About</a>
+
+        <div class="navbar__dropdown">
+          <a href="../industries.html" class="navbar__link navbar__dropdown-toggle">
+            Industries
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="../industries/automotive.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🚗</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Automotive</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">OEM-grade die-cuts &amp; gaskets</div>
+              </div>
+            </a>
+            <a href="../industries/aerospace.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">✈️</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Aerospace</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Lightweight die-cut seals</div>
+              </div>
+            </a>
+            <a href="../industries/telecom.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">📡</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Telecom</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">EMI shielding &amp; venting</div>
+              </div>
+            </a>
+            <a href="../industries/ev.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🔋</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">EV</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Thermal management pads</div>
+              </div>
+            </a>
+            <a href="../industries/healthcare.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🏥</div>
+              <div>
+                <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Healthcare</div>
+                <div style="font-size:0.7rem;color:var(--clr-text-muted);">Sterile membranes &amp; pads</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar__dropdown">
+          <a href="../products.html" class="navbar__link navbar__dropdown-toggle active">
+            Products
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 7.5l5 5 5-5"/>
+            </svg>
+          </a>
+          <div class="navbar__dropdown-menu" role="menu">
+            <a href="../products/epfte-membranes.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🔬</div>
+              <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">ePTFE Membranes</div>
+            </a>
+            <a href="../products/rubber-gaskets.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">🫧</div>
+              <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Rubber Gaskets</div>
+            </a>
+            <a href="../products/electronic-die-cuts.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">💡</div>
+              <div style="font-weight:600;color:var(--clr-text-primary);font-size:0.8rem;">Electronic Die-Cuts</div>
+            </a>
+            <a href="../products.html" class="navbar__dropdown-item" role="menuitem">
+              <div class="navbar__dropdown-icon">📦</div>
+              <div style="font-weight:600;color:var(--clr-accent-blue-lt);font-size:0.8rem;">View All Products →</div>
+            </a>
+          </div>
+        </div>
+
+        <a href="../manufacturing.html" class="navbar__link">Manufacturing</a>
+        <a href="../resources.html" class="navbar__link">Resources</a>
+        <a href="../careers.html" class="navbar__link">Careers</a>
+        <a href="../contact.html" class="navbar__link">Contact</a>
+      </nav>
+      <div class="navbar__cta"><a href="../contact.html#rfq" class="navbar__rfq">✦ Request a Quote</a></div>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="navbar__mobile" id="mobile-menu">
+    <a href="../index.html" class="navbar__mobile-link">Home</a>
+    <a href="../about.html" class="navbar__mobile-link">About</a>
+    <a href="../industries.html" class="navbar__mobile-link">Industries</a>
+    <a href="../products.html" class="navbar__mobile-link">Products</a>
+    <a href="../manufacturing.html" class="navbar__mobile-link">Manufacturing</a>
+    <a href="../resources.html" class="navbar__mobile-link">Resources</a>
+    <a href="../careers.html" class="navbar__mobile-link">Careers</a>
+    <a href="../contact.html" class="navbar__mobile-link">Contact</a>
+    <div class="navbar__mobile-cta"><a href="../contact.html#rfq" class="navbar__mobile-rfq">✦ Request a Quote</a></div>
+  </div>
+</header>
+
+<section class="product-hero" aria-label="Double Sided Tape product page">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb" style="margin-bottom:var(--sp-8);">
+      <a href="../index.html">Home</a><span class="sep">›</span>
+      <a href="../products.html">Products</a><span class="sep">›</span>
+      <span class="current">Double Sided Tape</span>
+    </nav>
+    <div class="product-hero__inner">
+      <div class="product-hero__image" data-reveal="left"><img src="../images/products/Double-Sided%20Tape.png" alt="Double Sided Tape"></div>
+      <div data-reveal="right">
+        <div class="badge badge-blue" style="margin-bottom:var(--sp-4);">Adhesive &amp; Foam</div>
+        <h1 style="font-size:clamp(var(--fs-2xl),4vw,var(--fs-4xl));font-weight:var(--fw-black);color:var(--clr-text-primary);margin-bottom:var(--sp-5);line-height:var(--lh-snug);">
+          Double Sided Tape
+        </h1>
+        <p style="font-size:var(--fs-base);color:var(--clr-text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--sp-6);">
+          Precision die-cut double-sided tapes in acrylic, rubber, and silicone adhesive systems for permanent mounting, splicing, and assembly applications.
+        </p>
+        <p style="font-size:var(--fs-sm);color:var(--clr-text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--sp-8);">
+          Our double-sided tape portfolio covers light-duty mounting to high-strength structural bonding. Available in transfer tape, foam carrier, and film carrier constructions — die-cut to any shape with tight tolerance registration.
+        </p>
+        <div style="display:flex;gap:var(--sp-3);flex-wrap:wrap;margin-bottom:var(--sp-6);">
+          <span class="badge badge-blue">🚗 Automotive</span>
+          <span class="badge badge-blue">💡 Electronics</span>
+          <span class="badge badge-blue">🏭 Industrial</span>
+          <span class="badge badge-green">🏥 Medical</span>
+        </div>
+        <div style="display:flex;gap:var(--sp-4);flex-wrap:wrap;">
+          <a href="../contact.html#rfq?product=double-sided-tape" class="btn btn-primary btn-lg" id="dst-rfq-btn">
+            Request a Quote
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M4 10h12M10 4l6 6-6 6"/></svg>
+          </a>
+          <a href="../resources.html" class="btn btn-outline btn-lg" id="dst-ds-btn">📄 Request Datasheet</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="spec-section" aria-label="Product specifications">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-12);" data-reveal>
+      <div>
+        <h2 class="section-title" style="margin-bottom:var(--sp-6);">Technical <span>Specifications</span></h2>
+        <p style="color:var(--clr-text-muted);font-size:var(--fs-sm);margin-bottom:var(--sp-6);line-height:var(--lh-relaxed);max-width:none;">Typical specification range — custom grades available to specific application requirements. Contact our team for material certification data.</p>
+        <table class="specs-table" role="table" aria-label="Double Sided Tape specifications">
+          <tbody>
+            <tr><th scope="row">Adhesive Type</th><td>Acrylic / Rubber / Silicone</td></tr>
+            <tr><th scope="row">Carrier</th><td>None (transfer) / PET film / Acrylic foam / PE foam</td></tr>
+            <tr><th scope="row">Total Thickness</th><td>0.05 mm – 2.00 mm</td></tr>
+            <tr><th scope="row">Adhesion to Steel</th><td>5 N/cm – 25 N/cm (typical)</td></tr>
+            <tr><th scope="row">Temperature Range</th><td>-30°C to +150°C (acrylic) / -40°C to +260°C (silicone)</td></tr>
+            <tr><th scope="row">Liner</th><td>PET / Kraft / PE-coated</td></tr>
+            <tr><th scope="row">Delivery Form</th><td>Die-cut shapes / slit rolls / sheets</td></tr>
+            <tr><th scope="row">Certifications</th><td>IATF 16949:2016 (process); RoHS compliant</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="font-size:var(--fs-xl);font-weight:var(--fw-bold);color:var(--clr-text-primary);margin-bottom:var(--sp-6);">Key Properties</h3>
+        <div style="display:flex;flex-direction:column;gap:var(--sp-4);">
+          <div class="diff-card" style="padding:var(--sp-4) var(--sp-5);">
+            <div class="diff-card__icon-wrap teal" style="width:40px;height:40px;font-size:18px;">📋</div>
+            <div><div class="diff-card__title">Precision Die-Cutting</div><p class="diff-card__desc">Complex geometries and tight tolerances (±0.10 mm) for automated assembly lines.</p></div>
+          </div>
+          <div class="diff-card" style="padding:var(--sp-4) var(--sp-5);">
+            <div class="diff-card__icon-wrap blue" style="width:40px;height:40px;font-size:18px;">🔥</div>
+            <div><div class="diff-card__title">Temperature Versatility</div><p class="diff-card__desc">Acrylic for general purpose, silicone for high-temp, rubber for high-tack applications.</p></div>
+          </div>
+          <div class="diff-card" style="padding:var(--sp-4) var(--sp-5);">
+            <div class="diff-card__icon-wrap gold" style="width:40px;height:40px;font-size:18px;">🧩</div>
+            <div><div class="diff-card__title">Multi-Substrate Bonding</div><p class="diff-card__desc">Excellent adhesion to plastics, metals, glass, and powder-coated surfaces without primers.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:var(--sp-16) 0;background:var(--clr-bg-base);" aria-label="Applications">
+  <div class="container">
+    <div data-reveal>
+      <span class="section-label">Where It's Used</span>
+      <h2 class="section-title" style="margin-bottom:var(--sp-6);">Applications of <span>Double Sided Tape</span></h2>
+      <div class="apps-grid">
+        <div class="app-chip">🚗 Automotive Trim Mounting</div>
+        <div class="app-chip">💡 Electronics Component Bonding</div>
+        <div class="app-chip">📱 Mobile Device Assembly</div>
+        <div class="app-chip">🪞 Mirror / Lens Mounting</div>
+        <div class="app-chip">🏭 Industrial Nameplate Attachment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner" aria-label="Product CTA">
+  <div class="container">
+    <div class="cta-banner__inner" data-reveal>
+      <h2 class="cta-banner__title">Need double sided tape die-cuts for your <span class="gradient-text">application</span>?</h2>
+      <p class="cta-banner__subtitle">Share your adhesion requirements, liner preferences, and application details — we'll recommend the right tape construction and provide a quote.</p>
+      <div class="cta-banner__actions">
+        <a href="../contact.html#rfq?product=double-sided-tape" class="btn btn-primary btn-lg" id="dst-cta-rfq">Request a Quote for Double Sided Tape</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:var(--sp-16) 0;background:var(--clr-bg-surface);" aria-label="Related products">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom:var(--sp-8);">Related <span>Products</span></h2>
+    <div class="related-grid">
+      <a href="adhesive-tape.html" class="rel-card">
+        <div class="rel-card__icon">🎀</div>
+        <div class="rel-card__name">Adhesive Tape</div>
+        <div class="rel-card__cat">Adhesive &amp; Foam</div>
+      </a>
+      <a href="polyester-tape-die-cuts.html" class="rel-card">
+        <div class="rel-card__icon">⚡</div>
+        <div class="rel-card__name">Polyester Tape Die-Cuts</div>
+        <div class="rel-card__cat">Adhesive &amp; Foam</div>
+      </a>
+      <a href="vhb-tape.html" class="rel-card">
+        <div class="rel-card__icon">💪</div>
+        <div class="rel-card__name">VHB Tapes</div>
+        <div class="rel-card__cat">Adhesive &amp; Foam</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__main">
+
+      <div class="footer__brand">
+        <a href="../index.html" class="footer__logo">
+                    <img src="../images/Logos and Favicons/Incisee Rotomatic Logo (BGR).png" alt="Incisee Rotomatic Logo" style="width: 191px; height: auto;">
+        </a>
+      </div>
+
+      <div class="footer__info">
+        <p class="footer__tagline">
+          Precision die-cutting and web converting solutions for India's most demanding industries. IATF 16949:2016 certified manufacturer, Chennai.
+        </p>
+        <div class="footer__cert">
+          <span class="footer__cert-icon">🏆</span>
+          IATF 16949:2016 Certified
+        </div>
+        <div class="footer__social">
+          <a href="../#" class="footer__social-link" aria-label="LinkedIn">in</a>
+          <a href="../#" class="footer__social-link" aria-label="Twitter">𝕏</a>
+          <a href="../#" class="footer__social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer__col-title">Company</div>
+        <ul class="footer__links">
+          <li><a href="../about.html" class="footer__link">About Us</a></li>
+          <li><a href="../manufacturing.html" class="footer__link">Manufacturing</a></li>
+          <li><a href="../resources.html" class="footer__link">Resources</a></li>
+          <li><a href="../careers.html" class="footer__link">Careers</a></li>
+          <li><a href="../contact.html" class="footer__link">Contact</a></li>
+          <li><a href="../contact.html#rfq" class="footer__link">Request a Quote</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer__col-title">Industries</div>
+        <ul class="footer__links">
+          <li><a href="../industries/automotive.html" class="footer__link">Automotive</a></li>
+          <li><a href="../industries/aerospace.html" class="footer__link">Aerospace</a></li>
+          <li><a href="../industries/telecom.html" class="footer__link">Telecom</a></li>
+          <li><a href="../industries/ev.html" class="footer__link">EV</a></li>
+          <li><a href="../industries/healthcare.html" class="footer__link">Healthcare</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer__col-title">Get in Touch</div>
+        <div class="footer__contact-items">
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">📍</div>
+            <div class="footer__contact-text">
+              No 42, JAK Industrial Park,<br>
+              Vellanur, Chennai – 600 062,<br>
+              Tamil Nadu, India
+            </div>
+          </div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">📞</div>
+            <div class="footer__contact-text">
+              <a href="../tel:+919884554999">+91 98845 54999</a>
+            </div>
+          </div>
+          <div class="footer__contact-item">
+            <div class="footer__contact-icon">✉️</div>
+            <div class="footer__contact-text">
+              <a href="../mailto:cs@inciserotomatic.com">cs@inciserotomatic.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__copyright">© 2025 Incisee Rotomatic Pvt. Ltd. All rights reserved.</div>
+      <div class="footer__legal">
+        <a href="../privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+        <a href="../terms-of-use.html" class="footer__legal-link">Terms of Use</a>
+        <span class="footer__gst">GST: 33AAZFI6137B1ZZ</span>
+      </div>
+      <div class="footer__signature">Designed by <a href="../tel:+919884708864">Dominic Francis</a></div>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
