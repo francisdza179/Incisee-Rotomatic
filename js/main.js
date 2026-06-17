@@ -230,4 +230,45 @@ window.IR = {
   formatNum: (n) => new Intl.NumberFormat('en-IN').format(n),
   initHeroCanvas,
   animateCounter,
+  showCertificate: function() {
+    let modal = document.getElementById('iatf-modal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'iatf-modal';
+      modal.className = 'cert-modal';
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.innerHTML = `
+        <div class="cert-modal__backdrop"></div>
+        <div class="cert-modal__content">
+          <button class="cert-modal__close" aria-label="Close modal">&times;</button>
+          <div class="cert-modal__body">
+            <img src="images/IATF Quality Certificate.png" alt="IATF Quality Certificate" class="cert-modal__img">
+          </div>
+          <div class="cert-modal__footer">
+            <a href="images/IATF Quality Certificate.pdf" download class="btn btn-primary" style="display:inline-flex;align-items:center;gap:var(--sp-2);">
+              <span>📥 Download Official PDF</span>
+            </a>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      const closeModal = () => {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      };
+
+      modal.querySelector('.cert-modal__backdrop').addEventListener('click', closeModal);
+      modal.querySelector('.cert-modal__close').addEventListener('click', closeModal);
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+          closeModal();
+        }
+      });
+    }
+    
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
 };
