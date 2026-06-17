@@ -236,6 +236,7 @@
   padding: var(--sp-2) var(--sp-4);
   border-radius: var(--radius-full);
   font-size: var(--fs-sm);
+  white-space: nowrap;
   font-weight: var(--fw-medium);
   color: var(--clr-text-muted);
   background: var(--clr-bg-card);

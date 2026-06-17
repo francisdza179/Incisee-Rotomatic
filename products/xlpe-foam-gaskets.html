@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -131,8 +131,35 @@
   <div class="navbar__mobile" id="mobile-menu">
     <a href="../index.html" class="navbar__mobile-link">Home</a>
     <a href="../about.html" class="navbar__mobile-link">About</a>
-    <a href="../industries.html" class="navbar__mobile-link">Industries</a>
-    <a href="../products.html" class="navbar__mobile-link">Products</a>
+    <div class="navbar__mobile-dropdown">
+      <div class="navbar__mobile-dropdown-toggle">
+        <span>Industries</span>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M5 7.5l5 5 5-5"/>
+        </svg>
+      </div>
+      <div class="navbar__mobile-dropdown-menu">
+        <a href="../industries/automotive.html" class="navbar__mobile-dropdown-item">Automotive</a>
+        <a href="../industries/aerospace.html" class="navbar__mobile-dropdown-item">Aerospace</a>
+        <a href="../industries/telecom.html" class="navbar__mobile-dropdown-item">Telecom</a>
+        <a href="../industries/ev.html" class="navbar__mobile-dropdown-item">EV</a>
+        <a href="../industries/healthcare.html" class="navbar__mobile-dropdown-item">Healthcare</a>
+      </div>
+    </div>
+    <div class="navbar__mobile-dropdown">
+      <div class="navbar__mobile-dropdown-toggle">
+        <span>Products</span>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M5 7.5l5 5 5-5"/>
+        </svg>
+      </div>
+      <div class="navbar__mobile-dropdown-menu">
+        <a href="../products/epfte-membranes.html" class="navbar__mobile-dropdown-item">ePTFE Membranes</a>
+        <a href="../products/rubber-gaskets.html" class="navbar__mobile-dropdown-item">Rubber Gaskets</a>
+        <a href="../products/electronic-die-cuts.html" class="navbar__mobile-dropdown-item">Electronic Die-Cuts</a>
+        <a href="../products.html" class="navbar__mobile-dropdown-item" style="color:var(--clr-accent-blue-lt);">View All Products â†’</a>
+      </div>
+    </div>
     <a href="../manufacturing.html" class="navbar__mobile-link">Manufacturing</a>
     <a href="../resources.html" class="navbar__mobile-link">Resources</a>
     <a href="../careers.html" class="navbar__mobile-link">Careers</a>

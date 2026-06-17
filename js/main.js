@@ -49,6 +49,13 @@
     });
   }
 
+  // Mobile dropdown toggles
+  document.querySelectorAll('.navbar__mobile-dropdown-toggle').forEach(toggle => {
+    toggle.addEventListener('click', e => {
+      e.currentTarget.parentElement.classList.toggle('open');
+    });
+  });
+
   // Active link highlight
   const currentPath = window.location.pathname.replace(/\\/g, '/');
   document.querySelectorAll('.navbar__link, .navbar__mobile-link').forEach(link => {
