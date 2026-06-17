@@ -172,8 +172,9 @@
 
 @media (max-width: 900px) {
   .hero__inner { grid-template-columns: 1fr; }
-  .hero__visual { display: none; }
 }
+
+
 
 .hero__left {}
 
@@ -444,6 +445,81 @@
 }
 
 
+@media (max-width: 800px) {
+  .hero__visual-ring:nth-child(2) { inset: 55px; }
+  .hero__visual-ring:nth-child(3) { inset: 100px; }
+  .hero__visual-center {
+    inset: 130px;
+  }
+  .hero__visual-icon { font-size: 34px; }
+  .hero__visual-label { font-size: 0.7rem; }
+  .hero__visual-sublabel { font-size: 0.65rem; }
+}
+
+@media (max-width: 600px) {
+  .hero__visual-card {
+    width: 320px;
+    height: 320px;
+    margin: var(--sp-6) auto;
+  }
+  .hero__visual-ring:nth-child(2) { inset: 28px; }
+  .hero__visual-ring:nth-child(3) { inset: 56px; }
+  .hero__visual-center {
+    inset: 70px;
+  }
+  .hero__visual-icon { font-size: 28px; }
+  .hero__visual-label { font-size: 0.65rem; line-height: 1.1; }
+  .hero__visual-sublabel { display: none; }
+  
+  .orbit-item {
+    padding: var(--sp-2) var(--sp-3);
+    font-size: 0.65rem;
+    border-radius: var(--radius-sm);
+  }
+  .orbit-item .emoji { font-size: 14px; }
+  .orbit-item--ev {
+    transform: translate(-50%, 50%) scale(1.2) !important;
+  }
+  .orbit-item--ev .emoji {
+    font-size: 20px !important;
+  }
+  .orbit-item--2 { right: -30px; }
+  .orbit-item--5 { left: -30px; }
+  .orbit-item--3 { bottom: 8%; right: 22%; }
+  .orbit-item--4 { bottom: 8%; left: 22%; }
+
+  .hero__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-3);
+  }
+  .hero__actions .btn {
+    padding: var(--sp-4) var(--sp-3);
+    font-size: var(--fs-base);
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__left {
+    padding-left: var(--sp-6);
+    padding-right: var(--sp-6);
+  }
+  .hero__heading span,
+  .hero__heading span.hero__heading-main {
+    white-space: normal !important;
+  }
+  .hero__trust {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: var(--sp-3) var(--sp-4) !important;
+  }
+  .hero__trust-item {
+    font-size: var(--fs-xs) !important;
+  }
+}
+
 /* ── Stats Strip ──────────────────────────────────────────── */
 .stats-strip {
   background: var(--clr-bg-surface);
@@ -582,6 +658,15 @@
 .what-we-do__badge-label {
   font-size: var(--fs-xs);
   color: var(--clr-text-muted);
+}
+
+.what-we-do__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  margin-top: var(--sp-8);
 }
 
 .what-we-do__features {
@@ -1107,6 +1192,7 @@
 .marquee__track {
   display: flex;
   gap: var(--sp-8);
+  width: max-content;
   animation: marquee-scroll 30s linear infinite;
 }
 

@@ -40,6 +40,18 @@
   text-decoration: none;
   flex-shrink: 0;
 }
+
+/* ── Hamburger ────────────────────────────────────────────── */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--sp-2);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+  margin-left: auto;
+}
 .navbar__logo-icon {
   height: 40px;
   width: auto;
@@ -236,7 +248,23 @@
   cursor: pointer;
   border-radius: var(--radius-md);
   transition: background var(--transition-fast);
-  margin-left: auto;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .navbar__inner {
+    position: relative;
+  }
+  .navbar__hamburger {
+    display: flex;
+    position: absolute;
+    right: var(--sp-4);
+    margin-left: 0;
+  }
+  .navbar__nav,
+  .navbar__cta {
+    display: none;
+  }
 }
 
 .navbar__hamburger:hover {
@@ -317,15 +345,4 @@
   border-radius: var(--radius-md);
   font-weight: var(--fw-semibold);
   font-size: var(--fs-sm);
-}
-
-/* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .navbar__nav,
-  .navbar__rfq {
-    display: none;
-  }
-  .navbar__hamburger {
-    display: flex;
-  }
 }
