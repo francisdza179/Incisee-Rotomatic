@@ -1193,7 +1193,7 @@
   display: flex;
   gap: var(--sp-8);
   width: max-content;
-  animation: marquee-scroll 30s linear infinite;
+  animation: marquee-scroll 48s linear infinite;
 }
 
 .marquee__track:hover { animation-play-state: paused; }
@@ -1248,3 +1248,64 @@
 
 /* ── CTA Banner ───────────────────────────────────────────── */
 /* .cta-banner moved to css/global.css */
+
+/* ── Facility Strip ───────────────────────────────────────── */
+.facility-strip {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--clr-bg-base);
+}
+
+.facility-strip__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facility-strip__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.4) 100%);
+}
+
+.facility-strip__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.facility-strip__inner {
+  max-width: 55ch;
+  padding: var(--sp-16) 0;
+}
+
+.facility-strip__title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--fs-2xl), 3vw, var(--fs-4xl));
+  font-weight: var(--fw-black);
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: var(--sp-5);
+}
+
+.facility-strip__title span {
+  color: var(--clr-accent-blue-lt);
+}
+
+.facility-strip__desc {
+  font-size: var(--fs-base);
+  color: rgba(255,255,255,0.75);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--sp-8);
+  max-width: none;
+}
+
+@media (max-width: 640px) {
+  .facility-strip { min-height: 360px; }
+  .facility-strip__inner { padding: var(--sp-12) 0; }
+}

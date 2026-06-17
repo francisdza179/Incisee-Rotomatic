@@ -89,6 +89,16 @@
     .qa-img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-xl); border: 1px solid var(--clr-border); box-shadow: var(--shadow-glow-blue); transition: transform var(--transition-slow); }
     .qa-img:hover { transform: scale(1.02); }
     @media(max-width:990px){ .qa-image-wrapper { min-height: 300px; } }
+
+    .facility-gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--sp-5); margin-top:var(--sp-10); }
+    @media(max-width:1100px){ .facility-gallery{grid-template-columns:repeat(3,1fr);} }
+    @media(max-width:768px){ .facility-gallery{grid-template-columns:repeat(2,1fr);gap:var(--sp-3);} }
+    @media(max-width:480px){ .facility-gallery{grid-template-columns:1fr;} }
+    .facility-gallery__item { position:relative; border-radius:var(--radius-lg); overflow:hidden; border:1px solid var(--clr-border); background:var(--clr-bg-card); transition:all var(--transition-slow); cursor:pointer; }
+    .facility-gallery__item:hover { border-color:var(--clr-border-glow); box-shadow:var(--shadow-glow-blue); transform:translateY(-3px); }
+    .facility-gallery__img-wrap { height:280px; overflow:hidden; }
+    .facility-gallery__img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform var(--transition-slow); }
+    .facility-gallery__item:hover .facility-gallery__img-wrap img { transform:scale(1.08); }
   </style>
 <link rel="icon" type="image/png" href="images/Logos%20and%20Favicons/Incisee%20Rotomatic%20Favicon%20transparent.png">
 </head>
@@ -394,58 +404,65 @@
 <!-- PROCESS FLOW -->
 <section class="section-pad bg-surface" aria-label="Manufacturing process">
   <div class="container">
-    <div data-reveal style="text-align:center;max-width:50ch;margin:0 auto var(--sp-4);">
+    <div data-reveal style="text-align:center;max-width:60ch;margin:0 auto var(--sp-4);">
       <span class="section-label" style="justify-content:center;">How We Work</span>
       <h2 class="section-title">Our Manufacturing <span>Process</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">From drawing to delivery, every step is engineered, controlled, and validated in-house.</p>
     </div>
     <div class="process-flow" data-reveal role="list">
       <div class="process-step" role="listitem">
         <div class="process-step__num">1</div>
         <div class="process-step__icon">📥</div>
-        <div class="process-step__title">Customer Input</div>
-        <p class="process-step__desc">Receive drawings, specs, and application requirements</p>
+        <div class="process-step__title">Receiving Customer Input</div>
+        <p class="process-step__desc">Receive drawings, specifications, and application requirements</p>
       </div>
       <div class="process-step" role="listitem">
         <div class="process-step__num">2</div>
         <div class="process-step__icon">📐</div>
         <div class="process-step__title">Engineering Review</div>
-        <p class="process-step__desc">DFM analysis, material recommendation &amp; feasibility study</p>
+        <p class="process-step__desc">DFM analysis, material selection, and feasibility study</p>
       </div>
       <div class="process-step" role="listitem">
         <div class="process-step__num">3</div>
-        <div class="process-step__icon">🔧</div>
-        <div class="process-step__title">In-house Tool Design</div>
-        <p class="process-step__desc">Custom die tooling designed and manufactured in-house</p>
+        <div class="process-step__icon">🧪</div>
+        <div class="process-step__title">Prototype Development</div>
+        <p class="process-step__desc">Rapid prototyping and sample development for testing</p>
       </div>
       <div class="process-step" role="listitem">
         <div class="process-step__num">4</div>
-        <div class="process-step__icon">🧪</div>
-        <div class="process-step__title">Prototype Development</div>
-        <p class="process-step__desc">Rapid prototyping with &lt;6hr sampling turnaround</p>
+        <div class="process-step__icon">✅</div>
+        <div class="process-step__title">Customer Approval</div>
+        <p class="process-step__desc">Sample validation, feedback, and customer sign-off</p>
       </div>
       <div class="process-step" role="listitem">
         <div class="process-step__num">5</div>
-        <div class="process-step__icon">✅</div>
-        <div class="process-step__title">Customer Approval</div>
-        <p class="process-step__desc">Sample validation and customer sign-off</p>
+        <div class="process-step__icon">🔧</div>
+        <div class="process-step__title">In-house Tool Design</div>
+        <p class="process-step__desc">Custom rotary tooling designed and engineered in-house</p>
       </div>
       <div class="process-step" role="listitem">
         <div class="process-step__num">6</div>
         <div class="process-step__icon">✂️</div>
-        <div class="process-step__title">Material Slitting</div>
-        <p class="process-step__desc">Precision slitting of raw material rolls to width</p>
+        <div class="process-step__title">Raw Material Slitting</div>
+        <p class="process-step__desc">Precision slitting of raw material rolls to specified widths</p>
       </div>
       <div class="process-step" role="listitem">
         <div class="process-step__num">7</div>
         <div class="process-step__icon">⚙️</div>
-        <div class="process-step__title">Rotary Die Cutting</div>
-        <p class="process-step__desc">Production with real-time process control</p>
+        <div class="process-step__title">Rotary Die-Cutting</div>
+        <p class="process-step__desc">Production run with real-time process control</p>
       </div>
       <div class="process-step" role="listitem">
         <div class="process-step__num">8</div>
         <div class="process-step__icon">🔍</div>
         <div class="process-step__title">100% Vision Inspection</div>
-        <p class="process-step__desc">Full visual inspection — finished goods ready for OEM</p>
+        <p class="process-step__desc">Automated optical and physical quality inspection</p>
+      </div>
+      <div class="process-step" role="listitem">
+        <div class="process-step__num">9</div>
+        <div class="process-step__icon">📦</div>
+        <div class="process-step__title">Finished Goods for OEMs</div>
+        <p class="process-step__desc">Ready-to-use components delivered directly to OEMs</p>
       </div>
     </div>
   </div>
@@ -649,6 +666,119 @@
         <div class="equipment-card__name">VMM – Visual Measuring Machine</div>
         <div class="equipment-card__count">Sub-Micron Inspection</div>
         <p class="equipment-card__desc">High-resolution camera with CNC XY table for precise dimensional inspection, contour measurement and quality verification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKPLACE & FACILITY GALLERY -->
+<section class="section-pad" style="border-top: 1px solid var(--clr-border);" aria-label="Workplace and Facility Gallery">
+  <div class="container">
+    <div data-reveal style="text-align:center;max-width:55ch;margin:0 auto var(--sp-4);">
+      <span class="section-label" style="justify-content:center;">Inside Our Plant</span>
+      <h2 class="section-title">Workplace &amp; <span>Facility</span></h2>
+      <p class="section-subtitle" style="margin:0 auto;">A visual tour of our 1,200 m² company-owned facility in Chennai — from the ISO Class 7 clean room and shop floor to raw material storage and finished goods warehouse.</p>
+    </div>
+    <div class="facility-gallery" data-reveal>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Large%20commercial%20factory%20space.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Industrial%20clean%20room%20facility%20utilized%20for%20specialized%20manufacturing%20processes.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Technician%20operating%20a%20rotary%20die-cutting%20machine.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Automatic%20flatbed%20die-cutting%20machine%20used%20for%20processing%20label%20rolls.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Modern%20industrial%20workshop%20featuring%20a%20GCC%20LaserPro.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Material%20%26%20Product%20Sample%20Library.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Raw%20material%20area%20storing%20polypropylene,%20HDPE%20tarpaulin,%20and%20flexible%20packaging%20films..jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Warehouse%20featuring%20numerous%20brown%20cardboard%20boxes..jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Active%20electronic%20assembly%20line.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Facility%20for%20electronics%20manufacturing%20(product%20assembly%20and%20PCB%20assembly).jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Factory%20Workstation%20Unit.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Technician%20operating%20a%20rotary%20die-cutting%20machine%20within%20a%20manufacturing%20facility.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Prefabricated%20steel%20industrial%20building.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Industrial%20workspace%20with%20green%20epoxy%20flooring.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Professional%20factory%20floor%20for%20industrial%20operations.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Modern%20industrial%20manufacturing%20facility%20featuring%20Gawan.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Multi-station%20rotary%20die-cutting%20machine.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Gawan-FJ%20slitting%20machine.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/High-Accuracy%20Slitting%20Machine%20%E2%80%93%20HANYUAN.jpeg" alt="" loading="lazy">
+        </div>
+      </div>
+      <div class="facility-gallery__item">
+        <div class="facility-gallery__img-wrap">
+          <img src="images/Machines,%20Facility,%20and%20People/Log%20Roll%20Slitter%20%E2%80%93%20GAWAN.png" alt="" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
