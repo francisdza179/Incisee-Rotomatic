@@ -174,7 +174,8 @@
   color: var(--clr-text-secondary);
   transition: all var(--transition-fast);
 }
-.navbar__dropdown-item:hover {
+.navbar__dropdown-item:hover,
+.navbar__dropdown-item.active {
   background: rgba(30, 28, 206, 0.05);
   color: var(--clr-accent-blue);
 }

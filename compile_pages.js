@@ -40,21 +40,33 @@ htmlFiles.forEach(filePath => {
 
   // Set active class based on page path
   if (normalizedPath === 'index.html') {
-    headerHtml = headerHtml.replace('href="{{ROOT}}index.html" class="navbar__link"', 'href="{{ROOT}}index.html" class="navbar__link active"');
+    headerHtml = headerHtml.replace('href="' + depth + 'index.html" class="navbar__link"', 'href="' + depth + 'index.html" class="navbar__link active"');
   } else if (normalizedPath === 'about.html') {
-    headerHtml = headerHtml.replace('href="{{ROOT}}about.html" class="navbar__link"', 'href="{{ROOT}}about.html" class="navbar__link active"');
+    headerHtml = headerHtml.replace('href="' + depth + 'about.html" class="navbar__link"', 'href="' + depth + 'about.html" class="navbar__link active"');
   } else if (normalizedPath.startsWith('industries/')) {
-    headerHtml = headerHtml.replace('href="{{ROOT}}industries.html" class="navbar__link navbar__dropdown-toggle"', 'href="{{ROOT}}industries.html" class="navbar__link navbar__dropdown-toggle active"');
+    headerHtml = headerHtml.replace('href="' + depth + 'industries.html" class="navbar__link navbar__dropdown-toggle"', 'href="' + depth + 'industries.html" class="navbar__link navbar__dropdown-toggle active"');
+    // Set active on the matching sub-menu item
+    const pageName = normalizedPath.replace('industries/', '');
+    headerHtml = headerHtml.replace(
+      'href="' + depth + 'industries/' + pageName + '" class="navbar__dropdown-item',
+      'href="' + depth + 'industries/' + pageName + '" class="navbar__dropdown-item active'
+    );
   } else if (normalizedPath.startsWith('products/')) {
-    headerHtml = headerHtml.replace('href="{{ROOT}}products.html" class="navbar__link navbar__dropdown-toggle"', 'href="{{ROOT}}products.html" class="navbar__link navbar__dropdown-toggle active"');
+    headerHtml = headerHtml.replace('href="' + depth + 'products.html" class="navbar__link navbar__dropdown-toggle"', 'href="' + depth + 'products.html" class="navbar__link navbar__dropdown-toggle active"');
+    // Set active on the matching sub-menu item
+    const pageName = normalizedPath.replace('products/', '');
+    headerHtml = headerHtml.replace(
+      'href="' + depth + 'products/' + pageName + '" class="navbar__dropdown-item',
+      'href="' + depth + 'products/' + pageName + '" class="navbar__dropdown-item active'
+    );
   } else if (normalizedPath === 'manufacturing.html') {
-    headerHtml = headerHtml.replace('href="{{ROOT}}manufacturing.html" class="navbar__link"', 'href="{{ROOT}}manufacturing.html" class="navbar__link active"');
+    headerHtml = headerHtml.replace('href="' + depth + 'manufacturing.html" class="navbar__link"', 'href="' + depth + 'manufacturing.html" class="navbar__link active"');
   } else if (normalizedPath === 'resources.html') {
-    headerHtml = headerHtml.replace('href="{{ROOT}}resources.html" class="navbar__link"', 'href="{{ROOT}}resources.html" class="navbar__link active"');
+    headerHtml = headerHtml.replace('href="' + depth + 'resources.html" class="navbar__link"', 'href="' + depth + 'resources.html" class="navbar__link active"');
   } else if (normalizedPath === 'careers.html') {
-    headerHtml = headerHtml.replace('href="{{ROOT}}careers.html" class="navbar__link"', 'href="{{ROOT}}careers.html" class="navbar__link active"');
+    headerHtml = headerHtml.replace('href="' + depth + 'careers.html" class="navbar__link"', 'href="' + depth + 'careers.html" class="navbar__link active"');
   } else if (normalizedPath === 'contact.html') {
-    headerHtml = headerHtml.replace('href="{{ROOT}}contact.html" class="navbar__link"', 'href="{{ROOT}}contact.html" class="navbar__link active"');
+    headerHtml = headerHtml.replace('href="' + depth + 'contact.html" class="navbar__link"', 'href="' + depth + 'contact.html" class="navbar__link active"');
   }
 
   // 2. Process Footer

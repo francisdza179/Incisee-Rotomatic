@@ -112,7 +112,7 @@ function initAccordions() {
       }));
   const s = window.location.pathname.replace(/\\/g, "/");
   document
-    .querySelectorAll(".navbar__link, .navbar__mobile-link")
+    .querySelectorAll(".navbar__link, .navbar__mobile-link, .navbar__dropdown-item")
     .forEach((e) => {
       const t = e.getAttribute("href");
       if (!t) return;
