@@ -423,6 +423,18 @@
 .page-hero__overlay ~ .container .page-hero-label {
   color: rgba(255, 255, 255, 0.7);
 }
+.page-hero__overlay ~ .container .section-label--aero {
+  color: #e9d5ff;
+}
+.page-hero__overlay ~ .container .section-label--aero::before {
+  background: #e9d5ff;
+}
+.page-hero__overlay ~ .container .gradient-text-aero {
+  background: linear-gradient(135deg, #c084fc, #e9d5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 body:has(.page-hero__bg-image) .navbar.transparent {
   background: linear-gradient(
     to bottom,
@@ -520,6 +532,20 @@ body:has(.page-hero__bg-image) .navbar.transparent .navbar__logo-wordmark {
   --clr-industry-theme-rgb: 30, 28, 206;
   --clr-industry-theme-gradient-start: var(--clr-auto-blue);
   --clr-industry-theme-gradient-end: var(--clr-auto-blue-lt);
+}
+
+/* Automotive hero — lighter text colors for readability against dark overlay */
+.page-industry-automotive .page-hero-label {
+  color: #7a77f2 !important;
+}
+.page-industry-automotive .page-hero-label::before {
+  background: #7a77f2 !important;
+}
+.page-industry-automotive .gradient-text-auto {
+  background: linear-gradient(135deg, #6b68ee, #9e9cf7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Aerospace Theme Variable overrides */

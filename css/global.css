@@ -231,10 +231,10 @@ p {
   background: var(--clr-auto-blue) !important;
 }
 .section-label--aero {
-  color: var(--clr-aero-blue) !important;
+  color: var(--clr-accent-purple);
 }
 .section-label--aero::before {
-  background: var(--clr-aero-blue) !important;
+  background: var(--clr-accent-purple);
 }
 .section-label--healthcare {
   color: var(--clr-accent-blue) !important;
