@@ -132,9 +132,9 @@ foreach ($file in $files) {
         $fAddrNew = $crlf + '            <div class="footer__contact-icon">' + $pin + '</div>' + $crlf + '            <div class="footer__contact-text">' + $crlf + '              No 42, JAK Industrial Park'
         $content = $content.Replace($fAddrOld, $fAddrNew); $fixCount++; Write-Host "  [+] Footer address icon"
     }
-    $fPhoneOld = $crlf + '            <div class="footer__contact-icon">??</div>' + $crlf + '            <div class="footer__contact-text">' + $crlf + '              <a href="../tel:+919884554999'
+    $fPhoneOld = $crlf + '            <div class="footer__contact-icon">??</div>' + $crlf + '            <div class="footer__contact-text">' + $crlf + '              <a href="../tel:+919600019479'
     if ($content.Contains($fPhoneOld)) {
-        $fPhoneNew = $crlf + '            <div class="footer__contact-icon">' + $phone + '</div>' + $crlf + '            <div class="footer__contact-text">' + $crlf + '              <a href="../tel:+919884554999'
+        $fPhoneNew = $crlf + '            <div class="footer__contact-icon">' + $phone + '</div>' + $crlf + '            <div class="footer__contact-text">' + $crlf + '              <a href="../tel:+919600019479'
         $content = $content.Replace($fPhoneOld, $fPhoneNew); $fixCount++; Write-Host "  [+] Footer phone icon"
     }
     $fEmailOld = $crlf + '            <div class="footer__contact-icon">??</div>' + $crlf + '            <div class="footer__contact-text">' + $crlf + '              <a href="../mailto:cs@inciserotomatic.com'
