@@ -1,9 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 
+function stripBOM(str) {
+  if (typeof str === 'string' && str.charCodeAt(0) === 0xFEFF) {
+    return str.slice(1);
+  }
+  return str;
+}
+
 const templatesDir = path.join(__dirname, 'templates');
-const headerTemplate = fs.readFileSync(path.join(templatesDir, 'header.html'), 'utf8');
-const footerTemplate = fs.readFileSync(path.join(templatesDir, 'footer.html'), 'utf8');
+const headerTemplate = stripBOM(fs.readFileSync(path.join(templatesDir, 'header.html'), 'utf8'));
+const footerTemplate = stripBOM(fs.readFileSync(path.join(templatesDir, 'footer.html'), 'utf8'));
 
 // Get all HTML files recursively (excluding templates directory)
 function getHtmlFiles(dir) {
@@ -27,7 +34,7 @@ const htmlFiles = getHtmlFiles(__dirname);
 
 htmlFiles.forEach(filePath => {
   const relativePath = path.relative(__dirname, filePath);
-  let content = fs.readFileSync(filePath, 'utf8');
+  let content = stripBOM(fs.readFileSync(filePath, 'utf8'));
 
   // Determine depth (e.g. "industries/ev.html" has 1 slash -> depth is "../")
   // For windows, handle backslash
@@ -90,7 +97,7 @@ htmlFiles.forEach(filePath => {
     console.warn(`Warning: Footer not found in ${relativePath}`);
   }
 
-  fs.writeFileSync(filePath, content, 'utf8');
+  fs.writeFileSync(filePath, stripBOM(content), 'utf8');
 });
 
 console.log(`Successfully compiled header and footer templates into ${htmlFiles.length} HTML files.`);
